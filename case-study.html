@@ -1,0 +1,849 @@
+---
+layout: case-study-layout.html
+title: "Case Study - CASTAGNE"
+permalink: /case-study.html
+---
+
+<div class="min-h-screen bg-white">
+  <!-- Layout principal selon le design Figma -->
+  <div class="flex flex-col items-center justify-center pb-0 pt-0 px-0 relative w-full max-w-[1400px] mx-auto overflow-x-hidden">
+    
+    <!-- Section principale CASE -->
+    <div class="flex flex-row-reverse gap-[30px] items-start justify-start order-1 pb-5 pt-0 px-10 relative w-full">
+      
+      <!-- Menu latéral (Sticky Top) -->
+      <div class="flex flex-col h-[900px] items-center justify-start order-3 pb-0 pt-5 px-0 shrink-0 sticky top-0 w-[38px]">
+        <div class="bg-[#f2f3f4] side-navigation-container flex flex-col gap-[3px] items-center justify-center px-0 py-[3px] rounded-bl-[100px] rounded-br-[100px] rounded-tl-[5px] rounded-tr-[5px] shrink-0 sticky top-0 w-10">
+          <div class="flex flex-col h-[172px] items-center justify-center px-[5px] py-3 rounded-[100px] shrink-0 sticky top-0 w-[37px]">
+            <div class="flex h-[140px] items-center justify-center relative shrink-0 w-[18px]">
+              <div class="flex-none rotate-[270deg]">
+                <div class="h-[18px] w-[140px] bg-center bg-no-repeat bg-gray-200" id="case-hero-image"></div>
+              </div>
+            </div>
+          </div>
+          <div class="relative shrink-0 size-[37px]">
+            <svg class="w-full h-full" viewBox="0 0 37 37" fill="none">
+              <circle cx="18.5" cy="18.5" r="18.5" fill="#F2F3F4"/>
+            </svg>
+          </div>
+          <div class="relative shrink-0 size-[37px]">
+            <svg class="w-full h-full" viewBox="0 0 37 37" fill="none">
+              <circle cx="18.5" cy="18.5" r="18.5" fill="#F2F3F4"/>
+            </svg>
+          </div>
+          <div class="flex flex-row gap-0.5 items-center justify-center p-[5px] relative rounded-[100px] shrink-0 size-[37px]">
+            <div class="relative shrink-0 size-5">
+              <svg class="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                <path d="M10 2c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne Galerie -->
+      <div class="flex flex-col gap-2.5 items-start justify-start order-2 p-0 relative shrink-0 flex-1">
+        <div class="flex flex-col gap-2.5 items-start justify-start pb-[30px] pt-5 px-0 relative shrink-0 w-full">
+          <!-- Composant NarrativeGallery -->
+          {% include "narrative-gallery.html" %}
+        </div>
+      </div>
+
+      <!-- Colonne Contenu -->
+      <div class="flex flex-col gap-[13px] items-start justify-start order-1 pb-[30px] pt-5 px-0 relative shrink-0 w-[457px]">
+        <!-- Composant Content -->
+        {% include "case-content.html" %}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer - Sorti de la structure du case study pour prendre toute la largeur -->
+<div class="w-full">
+  {% include "footer.html" %}
+</div>
+
+<script>
+// Fonction pour récupérer les paramètres d'URL
+function getUrlParameter(name) {
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  var results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// Fonction pour charger les données du case study
+async function loadCaseStudy(caseId) {
+  try {
+    console.log('Chargement du case study:', caseId);
+    
+    const response = await fetch(`/_data/cases/${caseId}.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log('Données chargées:', data);
+    console.log('Nombre de blocs de galerie:', data.galleryBlocks ? data.galleryBlocks.length : 0);
+    if (data.galleryBlocks) {
+      data.galleryBlocks.forEach((block, index) => {
+        console.log(`Bloc ${index}:`, block.type, block.src);
+      });
+    }
+    
+    // Stocker les données globalement pour les composants
+    window.caseData = {
+      [caseId]: data
+    };
+    window.galleryData = {
+      [caseId]: data.galleryBlocks || []
+    };
+    window.casesList = [data];
+    
+    // Mettre à jour l'image hero dans le menu latéral
+    if (data.galleryBlocks && data.galleryBlocks.length > 0) {
+      const heroImage = data.galleryBlocks.find(block => block.type === 'hero');
+      if (heroImage) {
+        const heroImageElement = document.getElementById('case-hero-image');
+        if (heroImageElement) {
+          heroImageElement.style.backgroundImage = `url('${heroImage.src}')`;
+          heroImageElement.style.backgroundSize = '99.33% 100%';
+          heroImageElement.style.backgroundPosition = '33.9% 0%';
+        }
+      }
+    }
+    
+    // Émettre un événement pour informer la galerie que les données sont prêtes
+    document.dispatchEvent(new CustomEvent('galleryDataLoaded', {
+      detail: { caseData: data }
+    }));
+    
+    // Initialiser les composants avec les données
+    initializeComponents();
+    
+          // Appliquer le thème unifié
+      if (data.themeColor) {
+        console.log('Data loaded:', data);
+        console.log('Theme color:', data.themeColor);
+        console.log('Text color:', data.acknowledgments?.details?.colors?.text);
+        console.log('Footer image:', data.acknowledgments?.details?.footerImage);
+        
+        // Nettoyer d'abord tous les thèmes précédents
+        clearAllThemes();
+        
+        // Appliquer le nouveau thème
+        const theme = {
+          backgroundColor: data.themeColor,
+          textColor: data.acknowledgments?.details?.colors?.text || '#000000',
+          backgroundImage: data.acknowledgments?.details?.footerImage || null
+        };
+        
+        console.log('Applying unified theme:', theme);
+        
+        // Appliquer le thème unifié
+        applyUnifiedTheme(theme);
+      } else {
+        console.log('No theme color found in data');
+      }
+    
+  } catch (error) {
+    console.error('Erreur lors du chargement des données:', error);
+    // Afficher un message d'erreur à l'utilisateur
+    document.body.innerHTML = `
+      <div class="min-h-screen bg-white flex items-center justify-center">
+        <div class="text-center">
+          <h1 class="text-2xl font-bold text-gray-800 mb-4">Case Study non trouvé</h1>
+          <p class="text-gray-600 mb-4">Le case study "${caseId}" n'existe pas ou n'a pas pu être chargé.</p>
+          <a href="/" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function initializeComponents() {
+  // Initialiser la galerie
+  const gallery = document.querySelector('.narrative-gallery');
+  if (gallery && window.galleryData) {
+    const caseId = Object.keys(window.galleryData)[0];
+    if (window.galleryData[caseId]) {
+      console.log('Galerie initialisée avec', window.galleryData[caseId].length, 'blocs');
+    }
+  }
+
+  // Initialiser le contenu
+  const content = document.querySelector('.case-content');
+  if (content && window.caseData) {
+    const caseId = Object.keys(window.caseData)[0];
+    if (window.caseData[caseId]) {
+      console.log('Contenu initialisé avec les données du case study');
+    }
+  }
+}
+
+// Fonction pour nettoyer tous les thèmes précédents
+function clearAllThemes() {
+  // Réinitialiser tous les styles appliqués dynamiquement
+  const elementsToReset = [
+    'footer',
+    '#logo-block', '#quicklinks-block', '#opensource-block', '#legal-block', '#location-block', '#contact-block',
+    '.side-navigation-container',
+    '.nav-btn',
+    '#contributions-tags-container',
+    '#logo-castagne',
+    '#castagne-footer-svg',
+    '#book-intro-button'
+  ];
+  
+  elementsToReset.forEach(selector => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.style.backgroundColor = '';
+      element.style.color = '';
+      element.style.filter = '';
+    }
+  });
+  
+  // Réinitialiser les cercles SVG
+  const circles = document.querySelectorAll('svg circle');
+  circles.forEach(circle => {
+    circle.setAttribute('fill', '#F2F3F4');
+  });
+  
+  // Réinitialiser les paths SVG
+  const paths = document.querySelectorAll('#castagne-footer-svg path');
+  paths.forEach(path => {
+    path.style.fill = '';
+    path.setAttribute('fill', 'white');
+  });
+}
+
+// Fonction pour appliquer le thème unifié
+function applyUnifiedTheme(theme) {
+  if (!theme.backgroundColor && !theme.textColor) return;
+  
+  // Appliquer le thème aux blocs du footer
+  applyFooterBlocksTheme(theme);
+  
+  // Appliquer le thème à la navigation latérale
+  applySideNavigationTheme(theme);
+  
+  // Appliquer le thème aux boutons prev/next
+  applyNavigationButtonsTheme(theme);
+  
+  // Appliquer le thème aux tags
+  applyTagsTheme(theme);
+  
+  // Appliquer le thème au SVG CASTAGNE
+  applyLogoSVGTheme(theme);
+  
+  // Appliquer le thème aux CTAs
+  applyCTATheme(theme);
+  
+  // Appliquer le thème au footer principal
+  applyMainFooterTheme(theme);
+}
+
+// Fonction pour appliquer le thème aux blocs du footer
+function applyFooterBlocksTheme(theme) {
+  if (!theme.backgroundColor) return;
+  
+  console.log('Applying footer blocks theme:', theme.backgroundColor);
+  
+  // Définir les variables CSS pour permettre l'application via CSS
+  const footer = document.querySelector('#dynamic-footer');
+  if (footer) {
+    footer.style.setProperty('--theme-bg-color', theme.backgroundColor);
+    footer.style.setProperty('--theme-text-color', theme.textColor || '#000000');
+  }
+  
+  const footerBlocks = [
+    '#logo-block',
+    '#quicklinks-block', 
+    '#opensource-block',
+    '#legal-block',
+    '#location-block',
+    '#contact-block',
+    '#actions-block',
+    '#actions-mobile-block'
+  ];
+  
+  footerBlocks.forEach(selector => {
+    const block = document.querySelector(selector);
+    if (block) {
+      block.style.setProperty('background-color', theme.backgroundColor, 'important');
+      console.log(`Applied background to ${selector}:`, theme.backgroundColor);
+    } else {
+      console.log(`Block not found: ${selector}`);
+    }
+  });
+}
+
+// Fonction pour appliquer le thème à la navigation latérale
+function applySideNavigationTheme(theme) {
+  if (!theme.backgroundColor) return;
+  
+  const sideNav = document.querySelector('.side-navigation-container');
+  if (sideNav) {
+    sideNav.style.backgroundColor = theme.backgroundColor;
+  }
+  
+  // Appliquer aussi aux cercles SVG dans la navigation
+  const circles = sideNav?.querySelectorAll('svg circle');
+  if (circles && theme.backgroundColor) {
+    circles.forEach(circle => {
+      circle.setAttribute('fill', theme.backgroundColor);
+    });
+  }
+}
+
+// Fonction pour appliquer le thème aux boutons prev/next
+function applyNavigationButtonsTheme(theme) {
+  if (!theme.backgroundColor) return;
+  
+  const navButtons = document.querySelectorAll('.nav-btn');
+  navButtons.forEach(button => {
+    button.style.backgroundColor = theme.backgroundColor;
+    // Ajuster la couleur de hover
+    const hoverColor = adjustColorBrightness(theme.backgroundColor, -10);
+    button.style.setProperty('--hover-bg-color', hoverColor);
+    
+    // Appliquer la couleur de texte si disponible
+    if (theme.textColor) {
+      button.style.color = theme.textColor;
+    }
+  });
+}
+
+// Fonction pour appliquer le thème aux tags
+function applyTagsTheme(theme) {
+  if (!theme.textColor) return;
+  
+  // Appliquer la couleur de texte à tous les tags
+  const tags = document.querySelectorAll('#contributions-tags-container span');
+  tags.forEach(tag => {
+    tag.style.color = theme.textColor;
+  });
+  
+  // Appliquer aussi le background aux tags individuels si nécessaire
+  if (theme.backgroundColor) {
+    const tags = document.querySelectorAll('#contributions-tags-container span');
+    const rgbaColor = hexToRgba(theme.backgroundColor, 0.1);
+    
+    tags.forEach(tag => {
+      tag.style.backgroundColor = rgbaColor;
+      tag.style.padding = '4px 8px';
+      tag.style.borderRadius = '4px';
+      tag.style.margin = '2px';
+    });
+    
+    console.log('Applied background to', tags.length, 'individual tags:', rgbaColor);
+  }
+  
+  // Les textes du contenu gardent leur couleur par défaut pour la lisibilité
+  // Pas d'application de couleur du thème aux textes du contenu
+}
+
+// Fonction utilitaire pour convertir hex en rgba
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// Fonction pour appliquer le thème au SVG CASTAGNE
+function applyLogoSVGTheme(theme) {
+  if (!theme.textColor) return;
+  
+  console.log('Applying SVG theme with text color:', theme.textColor);
+  
+  const logoSVG = document.querySelector('#logo-castagne');
+  if (logoSVG) {
+    // Appliquer directement la couleur au SVG
+    logoSVG.style.filter = `brightness(0) saturate(100%) invert(1) sepia(1) saturate(1) hue-rotate(0deg)`;
+    logoSVG.style.setProperty('--svg-color', theme.textColor);
+    console.log('Applied theme to logo SVG');
+  } else {
+    console.log('Logo SVG not found');
+  }
+  
+  // Appliquer aussi au SVG du footer
+  const footerSVG = document.querySelector('#castagne-footer-svg');
+  if (footerSVG) {
+    const paths = footerSVG.querySelectorAll('path');
+    paths.forEach(path => {
+      path.style.setProperty('fill', theme.textColor, 'important');
+      path.setAttribute('fill', theme.textColor);
+    });
+    console.log('Applied theme to footer SVG, updated', paths.length, 'paths');
+  } else {
+    console.log('Footer SVG not found');
+  }
+  
+  // Appliquer aussi au logo CASTAGNE dans le bloc logo (image SVG externe)
+  const logoCastagne = document.querySelector('#logo-castagne');
+  if (logoCastagne) {
+    // Pour une image SVG externe, utiliser un filtre CSS simple
+    // Basé sur la couleur du thème, créer un filtre approprié
+    let filter = '';
+    
+    if (theme.textColor === '#6C3341') {
+      // Couleur marron foncé pour Plaiad - ajusté pour correspondre au SVG inline
+      filter = 'brightness(0) saturate(100%) invert(25%) sepia(55%) saturate(3000%) hue-rotate(330deg) brightness(90%) contrast(90%)';
+    } else if (theme.textColor === '#2C5F73') {
+      // Couleur bleu foncé pour Giros - ajusté pour correspondre au SVG inline
+      filter = 'brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(1500%) hue-rotate(180deg) brightness(40%) contrast(100%)';
+    } else {
+      // Couleur par défaut (noir)
+      filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)';
+    }
+    
+    logoCastagne.style.filter = filter;
+    console.log('Applied theme to logo CASTAGNE (image SVG) with color:', theme.textColor);
+  } else {
+    console.log('Logo CASTAGNE not found');
+  }
+}
+
+// Fonction pour appliquer le thème au footer principal
+function applyMainFooterTheme(theme) {
+  const footer = document.querySelector('#dynamic-footer');
+  if (!footer) {
+    console.log('Footer not found with #dynamic-footer');
+    return;
+  }
+  
+  console.log('Applying footer theme:', theme);
+  
+  // Appliquer le background au footer avec !important
+  if (theme.backgroundColor) {
+    footer.style.setProperty('background-color', theme.backgroundColor, 'important');
+    console.log('Footer background set to:', theme.backgroundColor);
+  }
+  
+  // Appliquer l'image de fond si disponible avec !important
+  if (theme.backgroundImage) {
+    const imageUrl = theme.backgroundImage.replace('./assets/', '/assets/');
+    footer.style.setProperty('background-image', `url('${imageUrl}')`, 'important');
+    footer.style.setProperty('background-size', 'cover', 'important');
+    footer.style.setProperty('background-position', 'center', 'important');
+    footer.style.setProperty('background-repeat', 'no-repeat', 'important');
+    console.log('Footer background image set to:', imageUrl);
+  }
+  
+  // Appliquer la couleur de texte avec !important
+  if (theme.textColor) {
+    footer.style.setProperty('color', theme.textColor, 'important');
+    console.log('Footer text color set to:', theme.textColor);
+  }
+}
+
+// Fonction pour appliquer le thème aux CTAs
+function applyCTATheme(theme) {
+  if (!theme.backgroundColor || !theme.textColor) return;
+  
+  // Appliquer aux boutons CTA
+  const ctaButtons = document.querySelectorAll('button[class*="bg-"], .cta-button, .btn-primary');
+  ctaButtons.forEach(button => {
+    button.style.backgroundColor = theme.backgroundColor;
+    button.style.color = theme.textColor;
+  });
+  
+  // Appliquer aux liens CTA
+  const ctaLinks = document.querySelectorAll('a[class*="bg-"], .cta-link');
+  ctaLinks.forEach(link => {
+    link.style.backgroundColor = theme.backgroundColor;
+    link.style.color = theme.textColor;
+  });
+  
+  // Appliquer spécifiquement aux boutons "Book Intro" dans le footer
+  // LOGIQUE COHÉRENTE avec footer-theme.js : textColor en background pour contraste optimal
+  const bookIntroButtons = document.querySelectorAll('#book-intro-button, #mobile-book-intro-button');
+  
+  if (bookIntroButtons.length > 0) {
+    bookIntroButtons.forEach(button => {
+      if (button) {
+        // Même logique que footer-theme.js : textColor comme background pour contraste
+        if (theme.textColor) {
+          button.style.setProperty('background-color', theme.textColor, 'important');
+        }
+        // backgroundColor comme couleur du texte
+        if (theme.backgroundColor) {
+          button.style.setProperty('color', theme.backgroundColor, 'important');
+        }
+        
+        console.log('Applied theme to Book Intro button:', {
+          backgroundColor: theme.textColor,
+          color: theme.backgroundColor
+        });
+      }
+    });
+  } else {
+    console.log('Book Intro buttons not found');
+  }
+}
+
+// Fonction utilitaire pour ajuster la luminosité d'une couleur
+function adjustColorBrightness(hex, percent) {
+  const num = parseInt(hex.replace("#",""), 16);
+  const amt = Math.round(2.55 * percent);
+  const R = (num >> 16) + amt;
+  const G = (num >> 8 & 0x00FF) + amt;
+  const B = (num & 0x0000FF) + amt;
+  return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+    (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+    (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+}
+
+// Gestion de la navigation entre les cases
+document.addEventListener('caseChanged', function(event) {
+  const caseData = event.detail.caseData;
+  
+  // Mettre à jour la galerie si nécessaire
+  if (caseData.galleryBlocks) {
+    const caseId = caseData.id || 'default';
+    window.galleryData = {
+      [caseId]: caseData.galleryBlocks
+    };
+    
+    // Recharger la galerie
+    const gallery = document.querySelector('.narrative-gallery');
+    if (gallery) {
+      // Réinitialiser la galerie avec les nouvelles données
+      const galleryInstance = new NarrativeGallery(gallery, {
+        blocks: caseData.galleryBlocks,
+        themeColor: caseData.themeColor || '#AEC8D3'
+      });
+    }
+  }
+  
+  // Appliquer le thème unifié
+  if (caseData.themeColor) {
+    clearAllThemes();
+    applyUnifiedTheme({
+      backgroundColor: caseData.themeColor,
+      textColor: caseData.acknowledgments?.details?.colors?.text || '#000000'
+    });
+  }
+});
+
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Case Study: DOMContentLoaded triggered');
+  
+  // Désactiver le gestionnaire de thème du footer pour éviter les conflits
+  if (window.footerThemeManager) {
+    window.footerThemeManager.currentTheme = null;
+    console.log('Footer theme manager désactivé pour éviter les conflits');
+  }
+  
+  // Récupérer l'ID du case study depuis l'URL
+  const caseId = getUrlParameter('case');
+  
+  if (caseId) {
+    console.log('Case ID détecté:', caseId);
+    loadCaseStudy(caseId);
+  } else {
+    console.error('Aucun case ID spécifié dans l\'URL');
+    // Rediriger vers la page d'accueil ou afficher une erreur
+    document.body.innerHTML = `
+      <div class="min-h-screen bg-white flex items-center justify-center">
+        <div class="text-center">
+          <h1 class="text-2xl font-bold text-gray-800 mb-4">Paramètre manquant</h1>
+          <p class="text-gray-600 mb-4">Veuillez spécifier un case study dans l'URL (ex: ?case=giros)</p>
+          <a href="/" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    `;
+  }
+});
+</script>
+
+<style>
+/* Styles spécifiques à la page case-study */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Responsive design */
+/* Desktop large (1400px+) */
+@media (min-width: 1400px) {
+  .flex.flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  /* Contenu garde sa taille fixe */
+  .w-\[457px\] {
+    width: 457px;
+  }
+  
+  /* Galerie s'adapte au reste de l'espace */
+  .flex.flex-row-reverse > div:nth-child(2) {
+    flex: 1;
+  }
+}
+
+/* Desktop moyen (1200px-1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .flex.flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .px-10 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  /* Contenu garde sa taille fixe */
+  .w-\[457px\] {
+    width: 457px;
+  }
+  
+  /* Galerie s'adapte au reste de l'espace */
+  .flex.flex-row-reverse > div:nth-child(2) {
+    flex: 1;
+  }
+}
+
+/* Desktop petit (1024px-1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .flex.flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .px-10 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  /* Contenu garde sa taille fixe */
+  .w-\[457px\] {
+    width: 457px;
+  }
+  
+  /* Galerie s'adapte au reste de l'espace */
+  .flex.flex-row-reverse > div:nth-child(2) {
+    flex: 1;
+  }
+}
+
+/* Tablette large (900px-1023px) */
+@media (max-width: 1023px) and (min-width: 900px) {
+  .flex.flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .px-10 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  /* Contenu garde sa taille fixe */
+  .w-\[457px\] {
+    width: 457px;
+  }
+  
+  /* Galerie s'adapte au reste de l'espace */
+  .flex.flex-row-reverse > div:nth-child(2) {
+    flex: 1;
+  }
+}
+
+/* Tablette (768px-899px) */
+@media (max-width: 899px) and (min-width: 768px) {
+  .flex.flex-row-reverse {
+    flex-direction: column;
+  }
+  
+  .px-10 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .gap-\[30px\] {
+    gap: 1.5rem;
+  }
+  
+  .flex-1 {
+    flex: 1;
+    width: 100%;
+  }
+  
+  /* Contenu garde sa taille fixe sur tablette */
+  .w-\[457px\] {
+    width: 100%;
+    max-width: 457px;
+  }
+  
+  /* Optimiser la galerie pour tablette */
+  .narrative-gallery {
+    max-width: 100%;
+  }
+  
+  /* Ajuster la navigation latérale pour tablette */
+  .side-navigation-container {
+    position: relative;
+    top: auto;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Réorganiser les colonnes pour tablette */
+  .flex.flex-row-reverse > div {
+    order: 1;
+  }
+  
+  .flex.flex-row-reverse > div:nth-child(2) {
+    order: 2;
+  }
+  
+  .flex.flex-row-reverse > div:nth-child(3) {
+    order: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .flex.flex-row-reverse {
+    flex-direction: column;
+  }
+  
+  .px-10 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .gap-\[30px\] {
+    gap: 1rem;
+  }
+  
+  .flex-1 {
+    flex: 1;
+    width: 100%;
+  }
+  
+  /* Contenu garde sa taille fixe sur mobile */
+  .w-\[457px\] {
+    width: 100%;
+    max-width: 457px;
+  }
+  
+  /* Masquer la navigation latérale sur mobile */
+  .side-navigation-container {
+    display: none;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+  .px-10 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .gap-\[30px\] {
+    gap: 0.75rem;
+  }
+}
+
+/* Animations */
+.flex.flex-col-reverse {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects */
+.nav-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--hover-bg-color) !important;
+}
+
+.gallery-block img:hover {
+  transform: scale(1.02);
+}
+
+/* Styles pour le thème dynamique */
+#logo-block,
+#quicklinks-block,
+#opensource-block,
+#legal-block,
+#location-block,
+#contact-block {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-btn {
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* SVG CASTAGNE avec couleur dynamique */
+#logo-castagne {
+  filter: var(--svg-color-filter, none);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Tags avec couleur dynamique */
+#contributions-tags-container span {
+  transition: color 0.3s ease-in-out;
+}
+
+/* Navigation latérale avec thème */
+.side-navigation-container {
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Titres et textes avec couleur dynamique */
+#case-title,
+#case-subtitle,
+#case-description,
+#case-context,
+#case-solution,
+#case-contributions,
+#case-results,
+.content-section h2 {
+  transition: color 0.3s ease-in-out;
+}
+
+/* CTAs avec thème dynamique */
+.cta-button,
+.btn-primary,
+button[class*="bg-"],
+a[class*="bg-"] {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+</style> 

@@ -1,0 +1,103 @@
+<section id="snapshot" class="py-20 bg-gradient-to-b from-neutral-950 to-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-space font-bold text-[#F5EBD9] mb-6">
+        {{ site.sections.snapshot.title }}
+      </h2>
+      <p class="text-xl text-neutral-300 max-w-3xl mx-auto">
+        {{ site.sections.snapshot.subtitle }}
+      </p>
+    </div>
+
+    <!-- Metrics Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {% for metric in snapshot.metrics %}
+      <div class="metric-card bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:border-[#2D9CDB]/30 group">
+        <div class="flex items-start justify-between mb-4">
+          <div class="text-2xl">{{ metric.icon }}</div>
+          <div class="text-sm text-[#2D9CDB] font-semibold px-2 py-1 bg-[#2D9CDB]/10 rounded-full">
+            {{ metric.trend }}
+          </div>
+        </div>
+        
+        <h3 class="text-lg font-semibold text-[#2D9CDB] mb-2 group-hover:text-[#2D9CDB]/80 transition-colors duration-300">
+          {{ metric.label }}
+        </h3>
+        
+        <div class="text-3xl font-bold text-[#F5EBD9] mb-3 group-hover:scale-110 transition-transform duration-300">
+          {{ metric.value }}
+        </div>
+        
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          {{ metric.description }}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Expand Data Button -->
+    <div class="text-center">
+      <button id="expandDataBtn" 
+              class="group bg-neutral-800/50 hover:bg-neutral-800 border border-neutral-700 hover:border-[#2D9CDB]/50 text-[#F5EBD9] hover:text-[#2D9CDB] px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center space-x-3 mx-auto">
+        <span>Voir plus de données</span>
+        <svg class="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Expanded Data (Hidden by default) -->
+    <div id="expandedData" class="hidden mt-12">
+      <div class="bg-neutral-900/30 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-[#F5EBD9] mb-6">Données Détaillées</h3>
+        
+        <!-- Additional metrics -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-[#2D9CDB] mb-4">Performance</h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-neutral-300">Temps de réponse moyen</span>
+                <span class="text-[#F5EBD9] font-semibold">1.2s</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-neutral-300">Requêtes par seconde</span>
+                <span class="text-[#F5EBD9] font-semibold">2,500</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-neutral-300">Taux d'erreur</span>
+                <span class="text-[#F5EBD9] font-semibold">0.01%</span>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold text-[#2D9CDB] mb-4">Utilisation</h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-neutral-300">Sessions actives</span>
+                <span class="text-[#F5EBD9] font-semibold">12,450</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-neutral-300">Nouveaux utilisateurs</span>
+                <span class="text-[#F5EBD9] font-semibold">+1,200</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-neutral-300">Temps moyen par session</span>
+                <span class="text-[#F5EBD9] font-semibold">8m 32s</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Last update info -->
+        <div class="mt-8 pt-6 border-t border-neutral-800">
+          <p class="text-sm text-neutral-400">
+            Dernière mise à jour : {{ snapshot.lastUpdate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

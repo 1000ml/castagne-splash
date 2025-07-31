@@ -1,0 +1,87 @@
+{
+  "giros": {
+    "hero": {
+      "src": "./assets/images/cases/giros/hero-main.png",
+      "alt": "GIROS 360 - Interface principale",
+      "description": "Vue d'ensemble de l'interface GIROS 360 avec le dashboard principal"
+    },
+    "mockup-overlay": {
+      "src": "./assets/images/cases/giros/mockup-interface.png",
+      "alt": "Mockup interface GIROS",
+      "description": "Mockup de l'interface utilisateur GIROS avec les éléments principaux",
+      "backgroundColor": "#AEC8D3",
+      "padding": "89px 132px"
+    },
+    "full-width-demo": {
+      "src": "./assets/images/cases/giros/full-width-detail.png",
+      "alt": "Démonstration en temps réel",
+      "description": "Capture d'écran de la démonstration en temps réel",
+      "overlay": true
+    },
+    "grid-asymmetric": {
+      "left": {
+        "src": "./assets/images/cases/giros/grid-large.png",
+        "alt": "Vue détaillée du processus",
+        "description": "Capture détaillée du processus de gestion des risques",
+        "overlay": true
+      },
+      "right": [
+        {
+          "src": "./assets/images/cases/giros/grid-small-1.png",
+          "alt": "Analyse des données",
+          "description": "Interface d'analyse des données en temps réel",
+          "overlay": true
+        },
+        {
+          "src": "./assets/images/cases/giros/grid-small-2.png",
+          "alt": "Rapports de performance",
+          "description": "Génération automatique des rapports de performance",
+          "overlay": true
+        }
+      ]
+    },
+    "grid-mockup": {
+      "left": {
+        "src": "./assets/images/cases/giros/interface-left.png",
+        "alt": "Interface principale",
+        "description": "Interface principale de l'application GIROS",
+        "overlay": true
+      },
+      "right": {
+        "src": "./assets/images/cases/giros/mockup-right.png",
+        "alt": "Mockup mobile",
+        "description": "Version mobile de l'interface GIROS",
+        "backgroundColor": "#AEC8D3",
+        "padding": "50px"
+      }
+    },
+    "passes-detail": {
+      "src": "./assets/images/cases/giros/passes-detail.png",
+      "alt": "Détail des passes",
+      "description": "Vue détaillée des passes et de la navigation",
+      "overlay": true
+    },
+    "grid-equal": {
+      "items": [
+        {
+          "src": "./assets/images/cases/giros/grid-equal-1.png",
+          "alt": "Dashboard analytics",
+          "description": "Dashboard analytique avec métriques clés",
+          "overlay": true
+        },
+        {
+          "src": "./assets/images/cases/giros/grid-equal-2.png",
+          "alt": "Gestion des alertes",
+          "description": "Interface de gestion des alertes et notifications",
+          "overlay": true
+        }
+      ]
+    },
+    "timeline": {
+      "src": "./assets/images/cases/giros/timeline.png",
+      "alt": "Timeline du projet",
+      "description": "Timeline détaillée du projet GIROS 360",
+      "overlay": false
+    }
+  }
+} 

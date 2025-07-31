@@ -1,0 +1,82 @@
+---
+layout: base.html
+title: "Test Gallery - CASTAGNE"
+---
+
+<div class="min-h-screen bg-white p-8">
+  <h1 class="text-3xl font-bold mb-8">Test de la Galerie NarrativeGallery</h1>
+  
+  <!-- Test de la galerie -->
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Galerie Test</h2>
+    {% include "narrative-gallery.html" %}
+  </div>
+  
+  <!-- Debug info -->
+  <div class="mt-8 p-4 bg-gray-100 rounded">
+    <h3 class="text-lg font-bold mb-2">Debug Info</h3>
+    <div id="debug-info">
+      <p>Chargement des données...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Test des données
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Test page loaded');
+  
+  // Charger les données de test
+  fetch('/_data/cases/giros.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Data loaded:', data);
+      
+      // Stocker les données globalement
+      window.galleryData = {
+        'default': data.galleryBlocks
+      };
+      
+      // Émettre l'événement pour initialiser la galerie
+      document.dispatchEvent(new CustomEvent('galleryDataLoaded', {
+        detail: { caseData: data }
+      }));
+      
+      // Mettre à jour le debug info
+      const debugInfo = document.getElementById('debug-info');
+      debugInfo.innerHTML = `
+        <p><strong>Données chargées:</strong> ${data.galleryBlocks.length} blocs</p>
+        <p><strong>Titre:</strong> ${data.title}</p>
+        <p><strong>Description:</strong> ${data.description}</p>
+        <p><strong>Événement émis:</strong> galleryDataLoaded</p>
+        <pre class="mt-4 p-2 bg-gray-200 text-xs overflow-auto">${JSON.stringify(data.galleryBlocks.slice(0, 2), null, 2)}</pre>
+      `;
+      
+      // Vérifier la galerie après un délai
+      setTimeout(() => {
+        const gallery = document.querySelector('.narrative-gallery');
+        if (gallery) {
+          console.log('Gallery element found:', gallery);
+          const container = gallery.querySelector('.gallery-container');
+          if (container) {
+            console.log('Gallery container found:', container);
+            console.log('Gallery container HTML length:', container.innerHTML.length);
+            console.log('Gallery container HTML:', container.innerHTML.substring(0, 200) + '...');
+            
+            // Mettre à jour le debug info avec le résultat
+            const debugInfo = document.getElementById('debug-info');
+            debugInfo.innerHTML += `
+              <p class="mt-4"><strong>Résultat galerie:</strong></p>
+              <p>Container HTML length: ${container.innerHTML.length}</p>
+              <p>Container HTML: ${container.innerHTML.substring(0, 100)}...</p>
+            `;
+          }
+        }
+      }, 2000);
+    })
+    .catch(error => {
+      console.error('Error loading data:', error);
+      document.getElementById('debug-info').innerHTML = `<p class="text-red-500">Erreur: ${error.message}</p>`;
+    });
+});
+</script> 

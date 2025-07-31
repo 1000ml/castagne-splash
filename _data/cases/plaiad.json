@@ -1,0 +1,146 @@
+{
+  "title": "Plaiad - Concevez vos parcours personnalisés de bien-être & santé",
+  "subtitle": "Transformer la manière dont les soins de santé sont conçus et délivrés.",
+  "description": "Plaiad révolutionne l'engagement des patients dans leur santé par des solutions qui améliorent l'observance et les pratiques professionnelles.",
+  "contributionsTags": [
+    "Business Design",
+    "AMOA",
+    "Design de produits",
+    "Com & Market",
+    "Analyse de besoins et fonctionnelle",
+    "Conception et Innovation"
+  ],
+  "context": "Face à un système de santé souvent fragmenté et réactif, quatre fondateurs ont créé des parcours de soins adaptés aux besoins uniques des patients. Avec CASTAGNE, ils ont fondé Plaiad et développé un logiciel innovant pour implémenter leur méthode.",
+  "solution": "Nous développons des outils simples et efficaces conçus pour être utilisés facilement par tous les professionnels de la santé et du bien-être. Ces outils, associés à des formations continues et des kits de bilan physique, garantissent une utilisation complète de notre méthode.\n\nParallèlement, grâce à notre analyse des données et à un suivi personnalisé, nous pouvons affiner les traitements, générer des recommandations de bonnes pratiques et optimiser les parcours des patients.",
+  "contributions": "CASTAGNE a joué un rôle de partenaire fondateur, s'impliquant dès le début pour transformer la vision en un produit technologique viable. Contribuant à la stratégie d'affaires et à la recherche de leviers commerciaux nécessaires au projet.",
+  "results": "Le projet Plaiad a renforcé les méthodes des professionnels du bien-être par une approche structurée, augmentant ainsi l'efficacité et la satisfaction des patients.\n\nSon déploiement dans divers établissements a également amélioré la gestion des parcours de soins et la communication entre professionnels, permettant des interventions plus précises et bénéfiques.",
+  "learnings": "",
+  "acknowledgments": {
+    "summary": "Ce projet a été développé en collaboration avec une équipe pluridisciplinaire spécialisée dans la santé numérique et le design de services.",
+    "details": {
+      "year": "2023",
+      "tags": ["Santé", "Digital Health", "Patient Engagement", "Service Design"],
+      "colors": {
+        "background": "#F3AEA4",
+        "text": "#6C3341"
+      },
+      "footerImage": "./assets/images/cases/plaiad/Footer.jpg",
+      "client": {
+        "name": "Venture",
+        "url": "https://plaiad.com"
+      },
+      "ressources": [
+        {
+          "name": "Site Web",
+          "url": "https://jumeaux-fleuve.naos-cluster.tech/"
+        },
+        {
+          "name": "Case study",
+          "url": "https://castagne.com/cases/plaiad"
+        }
+      ],
+      "partenaires": [
+        {
+          "name": "Chloé Chevalier",
+          "url": "https://www.linkedin.com/in/chloe-chevalier"
+        },
+        {
+          "name": "Marie Gauthéron",
+          "url": "https://www.linkedin.com/in/marie-gautheron"
+        },
+        {
+          "name": "Aurore Thill",
+          "url": "https://www.linkedin.com/in/aurore-thill"
+        },
+        {
+          "name": "14eight",
+          "url": "https://14eight.com"
+        }
+      ],
+      "press": [],
+      "awards": []
+    }
+  },
+  "themeColor": "#F3AEA4",
+  "galleryBlocks": [
+    {
+      "type": "hero",
+      "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Hero.jpg",
+      "text": "Plaiad - Concevez vos parcours personnalisés de bien-être & santé",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-APP.jpg",
+      "text": "Application Compagnon à destination des patients, formulaire de suivi de la douleur",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Patient.jpg",
+          "text": "Fiche patient avec suivi de ses indicateurs",
+          "overlay": true,
+          "zoomable": true
+        },
+        {
+          "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Mockup-tools.jpg",
+          "text": "Sacoche de bilan de santé physique",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Research.jpg",
+      "text": "Outil de recherche et d'analyse des pratiques",
+      "overlay": true,
+      "zoomable": true
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Consultation.jpg",
+          "text": "Outil de gestion de vos consultations",
+          "overlay": true,
+          "zoomable": true
+        },
+        {
+          "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Onboarding.jpg",
+          "text": "Interface d'onboarding et de prise en main",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-Medicina.jpg",
+      "text": "La Maison de santé pluriprofessionnelle (MSP) Medicina",
+      "overlay": true,
+      "zoomable": true
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-SQVT.jpg",
+          "text": "Déclinaison de la plateforme à destination des SQTV",
+          "overlay": true,
+          "zoomable": true
+        },
+        {
+          "src": "./assets/images/cases/plaiad/CASTAGNE-Plaiad-SQVT2.jpg",
+          "text": "Indice d'efficacité des actes pratiqués",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    }
+  ]
+} 

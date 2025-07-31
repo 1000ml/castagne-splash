@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Simple - CASTAGNE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">Test Simple du système Case Study</h1>
+    
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-xl font-semibold mb-4">Test de chargement des données</h2>
+      <button id="test-giros" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-4">
+        Charger GIROS
+      </button>
+      <button id="test-plaiad" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+        Charger Plaiad
+      </button>
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">Résultats</h2>
+      <div id="results" class="space-y-4">
+        <p class="text-gray-600">Cliquez sur un bouton pour tester le chargement des données...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fonction pour charger les données d'un case study
+    async function loadCaseStudy(caseId) {
+      try {
+        console.log('Chargement du case study:', caseId);
+        
+        const response = await fetch(`/_data/cases/${caseId}.json`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Données chargées:', data);
+        
+        // Afficher les résultats
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+            <h3 class="font-bold">✅ Succès - ${caseId}.json</h3>
+            <p><strong>Titre:</strong> ${data.title}</p>
+            <p><strong>Sous-titre:</strong> ${data.subtitle}</p>
+            <p><strong>Description:</strong> ${data.description}</p>
+            <p><strong>Tags:</strong> ${data.contributionsTags ? data.contributionsTags.join(', ') : 'Aucun'}</p>
+          </div>
+        `;
+        
+        return data;
+      } catch (error) {
+        console.error('Erreur lors du chargement des données:', error);
+        
+        // Afficher l'erreur
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+            <h3 class="font-bold">❌ Erreur - ${caseId}.json</h3>
+            <p>${error.message}</p>
+          </div>
+        `;
+        
+        throw error;
+      }
+    }
+    
+    // Gestionnaires d'événements pour les boutons
+    document.getElementById('test-giros').addEventListener('click', () => {
+      loadCaseStudy('giros');
+    });
+    
+    document.getElementById('test-plaiad').addEventListener('click', () => {
+      loadCaseStudy('plaiad');
+    });
+    
+    // Test automatique au chargement de la page
+    document.addEventListener('DOMContentLoaded', async () => {
+      console.log('Page chargée, test automatique...');
+      
+      try {
+        await loadCaseStudy('giros');
+      } catch (error) {
+        console.error('Test automatique échoué:', error);
+      }
+    });
+  </script>
+</body>
+</html> 

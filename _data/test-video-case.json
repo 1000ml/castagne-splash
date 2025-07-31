@@ -1,0 +1,74 @@
+{
+  "title": "Test Vidéo et Images",
+  "subtitle": "Test des nouvelles fonctionnalités",
+  "description": "Test du comportement hover et du support vidéo",
+  "contributionsTags": [
+    "Test",
+    "Vidéo",
+    "Images"
+  ],
+  "context": "Test du comportement des images et vidéos dans la galerie",
+  "solution": "Test des nouvelles fonctionnalités",
+  "contributions": "Test",
+  "results": "Test",
+  "learnings": "",
+  "acknowledgments": "Test",
+  "themeColor": "#AEC8D3",
+  "galleryBlocks": [
+    {
+      "type": "hero",
+      "src": "https://picsum.photos/875/562",
+      "text": "Image Hero - Zoomable",
+      "overlay": true,
+      "zoomable": true
+    },
+    {
+      "type": "full-width",
+      "src": "https://picsum.photos/875/494",
+      "text": "Image Full Width - Non zoomable",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "grid-asymmetric",
+      "left": {
+        "src": "https://picsum.photos/329/487",
+        "text": "Image Gauche - Zoomable",
+        "overlay": true,
+        "zoomable": true
+      },
+      "right": [
+        {
+          "src": "https://picsum.photos/438/288",
+          "text": "Image Droite 1 - Non zoomable",
+          "overlay": true,
+          "zoomable": false
+        },
+        {
+          "src": "https://picsum.photos/434/288",
+          "text": "Image Droite 2 - Zoomable",
+          "overlay": true,
+          "zoomable": true
+        }
+      ]
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "https://picsum.photos/436/494",
+          "text": "Image Égale 1 - Vidéo (placeholder)",
+          "overlay": true,
+          "zoomable": false,
+          "isVideo": true
+        },
+        {
+          "src": "https://picsum.photos/436/494",
+          "text": "Image Égale 2 - Zoomable",
+          "overlay": true,
+          "zoomable": true
+        }
+      ]
+    }
+  ]
+} 

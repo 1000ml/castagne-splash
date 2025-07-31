@@ -1,0 +1,128 @@
+{
+  "highlightedProjects": [
+    {
+      "title": "Remote expertise, Customer Service",
+      "image": "/assets/images/hero-remote-expertise.png",
+      "description": "Prospection sur l'expertise à distance, vision produit et industrialisation du besoin.",
+      "tags": ["Strategic Consulting", "Remote Ops"],
+      "type": "BUILD",
+      "link": "#remote-expertise",
+      "status": "completed"
+    },
+    {
+      "title": "Control Tower",
+      "image": "/assets/images/hero-control-tower.png",
+      "description": "Démo d'application Control Tower en 14 jours. Résultat : adoption immédiate et roadmap alignée.",
+      "tags": ["UX/UI Design", "No-code"],
+      "type": "BUILD",
+      "link": "#control-tower",
+      "status": "completed"
+    },
+    {
+      "title": "Data Pipeline Optimization",
+      "image": "/assets/images/data-pipeline.png",
+      "description": "Optimisation des flux de données pour réduire les temps de traitement de 60%.",
+      "tags": ["Data Engineering", "Performance"],
+      "type": "OPTIMIZE",
+      "link": "#data-pipeline",
+      "status": "in-progress"
+    },
+    {
+      "title": "AI-Powered Analytics",
+      "image": "/assets/images/ai-analytics.png",
+      "description": "Développement d'une plateforme d'analyse prédictive basée sur l'IA.",
+      "tags": ["Machine Learning", "Analytics"],
+      "type": "INNOVATE",
+      "link": "#ai-analytics",
+      "status": "completed"
+    }
+  ],
+  "allProjects": [
+    {
+      "title": "Remote expertise, Customer Service",
+      "description": "Prospection sur l'expertise à distance",
+      "tags": ["Strategic Consulting", "Remote Ops"],
+      "type": "BUILD",
+      "status": "completed",
+      "duration": "3 mois",
+      "client": "TechCorp"
+    },
+    {
+      "title": "Control Tower",
+      "description": "Démo d'application Control Tower en 14 jours",
+      "tags": ["UX/UI Design", "No-code"],
+      "type": "BUILD",
+      "status": "completed",
+      "duration": "2 semaines",
+      "client": "InnovateLab"
+    },
+    {
+      "title": "Data Pipeline Optimization",
+      "description": "Optimisation des flux de données",
+      "tags": ["Data Engineering", "Performance"],
+      "type": "OPTIMIZE",
+      "status": "in-progress",
+      "duration": "6 mois",
+      "client": "DataFlow Inc"
+    },
+    {
+      "title": "AI-Powered Analytics",
+      "description": "Plateforme d'analyse prédictive",
+      "tags": ["Machine Learning", "Analytics"],
+      "type": "INNOVATE",
+      "status": "completed",
+      "duration": "8 mois",
+      "client": "AnalyticsPro"
+    },
+    {
+      "title": "Cloud Migration Strategy",
+      "description": "Migration complète vers le cloud",
+      "tags": ["Cloud", "DevOps"],
+      "type": "TRANSFORM",
+      "status": "completed",
+      "duration": "12 mois",
+      "client": "CloudFirst"
+    },
+    {
+      "title": "Customer Experience Redesign",
+      "description": "Refonte de l'expérience client",
+      "tags": ["UX/UI Design", "Customer Success"],
+      "type": "REDESIGN",
+      "status": "in-progress",
+      "duration": "4 mois",
+      "client": "CustomerHub"
+    }
+  ],
+  "projectTypes": [
+    {
+      "id": "BUILD",
+      "label": "BUILD",
+      "description": "Construction de solutions",
+      "color": "bg-blue-500"
+    },
+    {
+      "id": "OPTIMIZE",
+      "label": "OPTIMIZE",
+      "description": "Optimisation de processus",
+      "color": "bg-green-500"
+    },
+    {
+      "id": "INNOVATE",
+      "label": "INNOVATE",
+      "description": "Innovation et R&D",
+      "color": "bg-purple-500"
+    },
+    {
+      "id": "TRANSFORM",
+      "label": "TRANSFORM",
+      "description": "Transformation digitale",
+      "color": "bg-orange-500"
+    },
+    {
+      "id": "REDESIGN",
+      "label": "REDESIGN",
+      "description": "Refonte et redesign",
+      "color": "bg-pink-500"
+    }
+  ]
+} 

@@ -1,0 +1,221 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  # Configuration du site
+  - name: "site"
+    label: "Configuration du Site"
+    files:
+      - name: "site"
+        label: "Informations Générales"
+        file: "_data/site.json"
+        fields:
+          - {label: "Titre du Site", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Auteur", name: "author", widget: "string"}
+          - label: "Section Héro"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Sous-titre", name: "subtitle", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Boutons d'Action"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - {label: "Bouton Principal", name: "primary", widget: "string"}
+                  - {label: "Bouton Secondaire", name: "secondary", widget: "string"}
+          - label: "Sections"
+            name: "sections"
+            widget: "object"
+            fields:
+              - label: "Données Narratives"
+                name: "narrative"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Sous-titre", name: "subtitle", widget: "string"}
+              - label: "Snapshot"
+                name: "snapshot"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Sous-titre", name: "subtitle", widget: "string"}
+              - label: "Fonctionnalités"
+                name: "features"
+                widget: "object"
+                fields:
+                  - {label: "Titre", name: "title", widget: "string"}
+                  - {label: "Sous-titre", name: "subtitle", widget: "string"}
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "GitHub", name: "github", widget: "string"}
+
+  # Métriques du snapshot
+  - name: "snapshot"
+    label: "Métriques"
+    files:
+      - name: "snapshot"
+        label: "Données du Snapshot"
+        file: "_data/snapshot.json"
+        fields:
+          - label: "Métriques"
+            name: "metrics"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Valeur", name: "value", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Tendance", name: "trend", widget: "string"}
+              - {label: "Icône", name: "icon", widget: "string"}
+          - {label: "Dernière Mise à Jour", name: "lastUpdate", widget: "datetime"}
+          - {label: "Intervalle de Rafraîchissement (secondes)", name: "refreshInterval", widget: "number"}
+
+  # Données narratives
+  - name: "narrative"
+    label: "Données Narratives"
+    files:
+      - name: "narrative"
+        label: "Contenu Narratif"
+        file: "_data/narrative.json"
+        fields:
+          - label: "Blocs de Contenu"
+            name: "blocks"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Contenu", name: "content", widget: "text"}
+              - {label: "Icône", name: "icon", widget: "string"}
+              - label: "Fonctionnalités"
+                name: "features"
+                widget: "list"
+                fields:
+                  - {label: "Fonctionnalité", name: "widget", widget: "string"}
+              - label: "Bouton d'Action"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - {label: "Texte", name: "text", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string"}
+          - label: "Témoignages"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Rôle", name: "role", widget: "string"}
+              - {label: "Entreprise", name: "company", widget: "string"}
+              - {label: "Contenu", name: "content", widget: "text"}
+              - {label: "Note (1-5)", name: "rating", widget: "number", min: 1, max: 5}
+
+  # Projets
+  - name: "projects"
+    label: "Projets"
+    files:
+      - name: "projects"
+        label: "Défis & Initiatives"
+        file: "_data/projects.json"
+        fields:
+          - label: "Projets Mis en Avant"
+            name: "highlightedProjects"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                fields:
+                  - {label: "Tag", name: "widget", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["BUILD", "OPTIMIZE", "INNOVATE", "TRANSFORM", "REDESIGN"]}
+              - {label: "Lien", name: "link", widget: "string"}
+              - {label: "Statut", name: "status", widget: "select", options: ["completed", "in-progress"]}
+          - label: "Tous les Projets"
+            name: "allProjects"
+            widget: "list"
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                fields:
+                  - {label: "Tag", name: "widget", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["BUILD", "OPTIMIZE", "INNOVATE", "TRANSFORM", "REDESIGN"]}
+              - {label: "Statut", name: "status", widget: "select", options: ["completed", "in-progress"]}
+              - {label: "Durée", name: "duration", widget: "string"}
+              - {label: "Client", name: "client", widget: "string"}
+          - label: "Types de Projets"
+            name: "projectTypes"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Couleur", name: "color", widget: "string"}
+
+  # Navigation
+  - name: "navigation"
+    label: "Navigation"
+    files:
+      - name: "navigation"
+        label: "Menu de Navigation"
+        file: "_data/navigation.json"
+        fields:
+          - label: "Menu Principal"
+            name: "main"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Icône", name: "icon", widget: "string"}
+          - label: "Footer"
+            name: "footer"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Réseaux Sociaux"
+            name: "social"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Icône", name: "icon", widget: "select", options: ["github", "linkedin", "twitter"]}
+
+# Interface personnalisée
+display_url: https://castagne-website.netlify.app
+site_url: https://castagne-website.netlify.app
+
+# Prévisualisation
+preview_path: "{{fields.url}}"
+
+# Workflow de publication
+publish_mode: editorial_workflow
+
+# Permissions
+roles:
+  - name: admin
+    permissions:
+      - read
+      - write
+      - publish
+  - name: editor
+    permissions:
+      - read
+      - write
+  - name: author
+    permissions:
+      - read
+      - write 

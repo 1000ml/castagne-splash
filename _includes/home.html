@@ -1,0 +1,953 @@
+<!-- ======================================== -->
+<!-- SECTION HERO - HEADER PRINCIPAL -->
+<!-- ======================================== -->
+<section class="bg-[#1a1c1b] py-10 flex flex-col items-center justify-center relative min-h-screen full-width-section">
+  <!-- HERO-illustration-2 en haut sur mobile - avec dimensions originales respectées -->
+  <div class="lg:hidden w-full flex justify-center px-4 md:px-6 py-4">
+    <img src="/assets/images/HERO-illustration-2.png" alt="CASTAGNE" class="w-full max-w-[584px] h-auto object-contain" />
+  </div>
+  
+  <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-stretch justify-start px-4 md:px-6 min-h-[400px] lg:min-h-[761px]">
+    <!-- Texte principal -->
+    <div class="flex-1 flex flex-col gap-16 items-start justify-between h-full">
+      <!-- Titre principal avec Inter Bold 70px -->
+      <div class="font-['Inter'] font-bold leading-[0] text-[#e9d8b9] text-[70px] text-left w-full">
+        <p class="block leading-[normal]">
+          We build operations
+          <br />
+          at the edge.
+        </p>
+      </div>
+      
+      <!-- Liste des services avec Inter Regular 36px -->
+      <div class="font-['Inter'] font-normal leading-[normal] text-[#e9d8b9] text-left tracking-[3.96px] w-full">
+        <p class="mb-0">
+          <span class="text-[29px] tracking-[3.19px]">↓</span>
+          <span class="text-[42px] lg:text-[36px]">
+            <br aria-hidden="true" />
+            <br aria-hidden="true" />
+            INTERFACES.
+          </span>
+        </p>
+        <p class="block mb-0 text-[42px] lg:text-[36px] whitespace-pre-wrap">AUTOMATION.</p>
+        <p class="block mb-0 text-[42px] lg:text-[36px]">SENSORS.</p>
+        <p class="block text-[42px] lg:text-[36px]">DECISIONS.</p>
+      </div>
+      
+      <!-- Sous-titre avec Inria Serif 30px -->
+      <div class="font-['Inria_Serif'] leading-[0] text-[#e9d8b9] text-[30px] text-left w-full">
+        <p class="leading-[normal]">
+          <span>— </span>
+          <span class="font-['Inria_Serif'] font-bold">
+            aligned
+          </span>
+          <span> where it matters.</span>
+        </p>
+      </div>
+      
+      <!-- CTA simplifié avec Roboto 18px - toujours en bas à gauche -->
+      <div class="flex flex-col gap-2.5 items-start justify-center w-[246px]">
+        <div class="bg-[#ead7b7] flex flex-row gap-2.5 items-center justify-center px-5 py-3 rounded-[40px] relative">
+          <div aria-hidden="true" class="absolute border border-[rgba(255,255,255,0.6)] border-solid inset-0 pointer-events-none rounded-[40px]"></div>
+          <div class="relative shrink-0 size-5">
+            <img src="/assets/images/footer/solar_calendar-bold-duotone.svg" alt="Calendar" class="block max-w-none size-full filter brightness-0" />
+          </div>
+          <div class="font-['Roboto'] font-normal leading-[0] relative shrink-0 text-[#000000] text-[18px] text-center text-nowrap" style="font-variation-settings: 'wdth' 100">
+            <p class="block leading-[normal] whitespace-pre">Book Intro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Illustrations - Desktop: deux illustrations distinctes -->
+    <div class="hidden lg:flex flex-col gap-10 items-start justify-start relative self-stretch shrink-0">
+      <!-- Illustration principale - HERO-illustration-1 -->
+      <div class="flex items-center justify-center relative shrink-0">
+        <img src="/assets/images/HERO-illustration-1.png" alt="Hero Illustration 1" class="h-[651px] w-[584px] object-contain" />
+      </div>
+      <!-- Illustration bas - HERO-illustration-2 -->
+      <div class="flex justify-center shrink-0">
+        <img src="/assets/images/HERO-illustration-2.png" alt="CASTAGNE" class="h-[110px] w-[584px] object-contain" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Storytelling Section -->
+<section class="py-16 relative mt-8 full-width-section">
+  <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
+    <div id="storytelling-block" class="rounded-2xl p-8 bg-[#e9d8b8] cursor-pointer transition-all duration-500 hover:bg-[#d4c4a0] group relative">
+      <!-- Version Storytelling (affichée par défaut) -->
+      <div id="storytelling-content" class="transition-opacity duration-500 text-center">
+        <h2 class="font-bold text-2xl md:text-3xl text-black font-roboto mb-4">A creative engineering studio building real-world systems.</h2>
+        <p class="text-black text-lg font-roboto mb-2">We work where software, hardware and decision-making converge.<br />We don't sell methods — we build systems, in motion, in the world.</p>
+        <p class="text-black text-lg font-roboto">Every project is a test: of form, of utility, of impact.</p>
+        
+        <!-- Bouton Expand intégré dans le bloc - visible uniquement au survol -->
+        <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="bg-black text-white px-3 py-1.5 rounded-full flex items-center gap-1.5 font-roboto text-xs font-medium">
+            <span>Expand</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Version Data (cachée par défaut) -->
+      <div id="data-content" class="transition-opacity duration-500 opacity-0 hidden">
+        <!-- Texte principal avec éléments injectés -->
+        <div class="flex flex-wrap items-center justify-center gap-2 px-8 py-8 text-center">
+          <span class="text-black text-xl font-roboto font-medium">In the past</span>
+          <div class="border border-black rounded px-2.5 py-1">
+            <span class="text-black text-base font-roboto font-medium">24 months</span>
+          </div>
+          <span class="text-black text-xl font-roboto font-medium">,</span>
+          <span class="text-black text-xl font-roboto font-medium">we've supported</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Founders</span>
+          </div>
+          <span class="text-black text-base font-roboto font-medium">,</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Researchers</span>
+          </div>
+          <span class="text-black text-base font-roboto font-medium">and</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Product Teams</span>
+          </div>
+          <span class="text-black text-xl font-roboto font-medium">in more than 8 concrete initiatives — from</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Product Strategy</span>
+          </div>
+          <span class="text-black text-xl font-roboto font-medium">to</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Service Design</span>
+          </div>
+          <span class="text-black text-xl font-roboto font-medium">,</span>
+          <span class="text-black text-xl font-roboto font-medium">with an average of 6 weeks per mission,</span>
+          <span class="text-black text-xl font-roboto font-medium">focused on challenges in</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Industry</span>
+          </div>
+          <span class="text-black text-base font-roboto font-medium">,</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Energy</span>
+          </div>
+          <span class="text-black text-base font-roboto font-medium">,</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Tech</span>
+          </div>
+          <span class="text-black text-base font-roboto font-medium">and</span>
+          <div class="bg-[#5b5240] rounded-full px-2.5 py-1">
+            <span class="text-white text-base font-roboto font-medium">Education</span>
+          </div>
+        </div>
+        
+        <!-- Titre des chiffres clés -->
+        <div class="text-black text-base font-roboto font-medium text-center uppercase">
+          FEW DIGITS WE ARE PROUD OF
+        </div>
+        
+        <!-- Chiffres clés organisés horizontalement -->
+        <div class="flex flex-row items-start justify-between px-24 pt-8">
+          <!-- Premier chiffre -->
+          <div class="flex flex-col items-center justify-start text-center">
+            <div class="text-black text-3xl font-roboto font-medium leading-10">
+              80%
+            </div>
+            <div class="text-black text-base font-roboto font-normal leading-6 max-w-[213px]">
+              <span>of our missions start with a </span>
+              <span class="font-bold">strategic diagnosis</span>
+            </div>
+          </div>
+          
+          <!-- Deuxième chiffre -->
+          <div class="flex flex-col items-center justify-start text-center">
+            <div class="text-black text-3xl font-roboto font-medium leading-10">
+              2 public tenders
+            </div>
+            <div class="text-black text-base font-roboto font-normal leading-6">
+              successfully won
+            </div>
+          </div>
+          
+          <!-- Troisième chiffre -->
+          <div class="flex flex-col items-center justify-start text-center">
+            <div class="text-black text-3xl font-roboto font-medium leading-10">
+              €8M raised
+            </div>
+            <div class="text-black text-base font-roboto font-normal leading-6">
+              by the projects we supported
+            </div>
+          </div>
+        </div>
+        
+        <!-- Label discret en bas à droite -->
+        <div class="text-right text-black text-xs font-roboto opacity-50 flex items-center justify-end gap-1">
+          <img src="/assets/images/ci_data.svg" alt="Data" class="w-3 h-3 opacity-50" />
+          <span>Data-backed snapshot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const storytellingBlock = document.getElementById('storytelling-block');
+  const storytellingContent = document.getElementById('storytelling-content');
+  const dataContent = document.getElementById('data-content');
+  
+  let isExpanded = false;
+  
+  // Fonction pour étendre vers la version data (une seule fois)
+  function expandToData() {
+    if (!isExpanded) {
+      // Supprimer toutes les interactions
+      storytellingBlock.classList.remove('hover:bg-[#d4c4a0]', 'cursor-pointer', 'group');
+      storytellingBlock.style.cursor = 'default';
+      
+      // Transition vers la version data
+      storytellingContent.style.opacity = '0';
+      
+      setTimeout(() => {
+        storytellingContent.style.display = 'none';
+        dataContent.style.display = 'block';
+        
+        // Forcer un reflow avant de changer l'opacité
+        dataContent.offsetHeight;
+        
+        dataContent.style.opacity = '1';
+        isExpanded = true;
+      }, 250);
+    }
+  }
+  
+  // Gestionnaire d'événement pour le bloc entier
+  storytellingBlock.addEventListener('click', function() {
+    expandToData();
+  });
+});
+</script>
+
+<!-- Projects Listing Section -->
+<section class="bg-[#1a1c1b] py-20 full-width-section">
+  <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
+    <div class="flex flex-col gap-4">
+      <!-- Project 1: In progress (sans images) -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="flex flex-wrap gap-4 items-end w-full md:w-auto">
+          <div class="bg-[#e9d8b8] opacity-50 px-4 py-2 rounded-md w-full md:w-auto">
+            <div class="text-[#1a1c1b] text-lg font-medium font-inter tracking-tight">
+              🗄️ open-source plant growth data
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 grow">
+          <!-- Desktop CTA -->
+          <div class="hidden md:block">
+            <div class="bg-[#e9d8b8] opacity-50 px-4 py-2 rounded-bl-md rounded-br-[80px] rounded-tl-md rounded-tr-[80px] w-fit">
+              <div class="text-black text-sm font-medium font-inter tracking-wide uppercase">
+                In progress
+              </div>
+            </div>
+          </div>
+          <!-- Mobile CTA - format texte simple -->
+          <div class="md:hidden flex items-center gap-2 text-white opacity-70">
+            <span class="text-sm font-medium font-inter tracking-wide uppercase">In progress</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: In progress (sans images) -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="flex flex-wrap gap-4 items-end w-full md:w-auto">
+          <div class="bg-[#e9d8b8] opacity-50 px-4 py-2 rounded-md w-full md:w-auto">
+            <div class="text-[#1a1c1b] text-lg font-medium font-inter tracking-tight">
+              🐓 augmented animal farming
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 grow">
+          <!-- Desktop CTA -->
+          <div class="hidden md:block">
+            <div class="bg-[#e9d8b8] opacity-50 px-4 py-2 rounded-bl-md rounded-br-[80px] rounded-tl-md rounded-tr-[80px] w-fit">
+              <div class="text-black text-sm font-medium font-inter tracking-wide uppercase">
+                In progress
+              </div>
+            </div>
+          </div>
+          <!-- Mobile CTA - format texte simple -->
+          <div class="md:hidden flex items-center gap-2 text-white opacity-70">
+            <span class="text-sm font-medium font-inter tracking-wide uppercase">In progress</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: In progress (sans images) -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="flex flex-wrap gap-4 items-end w-full md:w-auto">
+          <div class="bg-[#e9d8b8] opacity-50 px-4 py-2 rounded-md w-full md:w-auto">
+            <div class="text-[#1a1c1b] text-lg font-medium font-inter tracking-tight">
+              🎒 narrative tourism with quests
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 grow">
+          <!-- Desktop CTA -->
+          <div class="hidden md:block">
+            <div class="bg-[#e9d8b8] opacity-50 px-4 py-2 rounded-bl-md rounded-br-[80px] rounded-tl-md rounded-tr-[80px] w-fit">
+              <div class="text-black text-sm font-medium font-inter tracking-wide uppercase">
+                In progress
+              </div>
+            </div>
+          </div>
+          <!-- Mobile CTA - format texte simple -->
+          <div class="md:hidden flex items-center gap-2 text-white opacity-70">
+            <span class="text-sm font-medium font-inter tracking-wide uppercase">In progress</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: GIROS - Explore (avec images et lien vers case study) -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="flex flex-wrap gap-4 items-end w-full md:w-auto">
+          <div class="bg-[#e9d8b8] px-4 py-2 rounded-md w-full md:w-auto">
+            <div class="text-[#1a1c1b] text-lg font-medium font-inter tracking-tight">
+              🌊 Digital twins of river
+            </div>
+          </div>
+          <div class="h-[360px] rounded-md w-full md:w-[684px] bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/images/GIROS-1.jpg')"></div>
+          <div class="h-[360px] rounded-md w-full md:w-[236px] bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/images/GIROS-2.jpg')"></div>
+        </div>
+        <div class="flex flex-col gap-4 grow">
+          <!-- Desktop CTA -->
+          <div class="hidden md:block">
+            <a href="/case-study.html?case=giros" class="bg-[#e9d8b8] px-4 py-2 rounded-bl-md rounded-br-[80px] rounded-tl-md rounded-tr-[80px] w-fit flex items-center gap-3 hover:bg-[#e6d2b1] transition-colors duration-200">
+              <div class="text-black text-sm font-medium font-inter tracking-wide uppercase">
+                Explore
+              </div>
+              <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- Mobile CTA - format texte simple -->
+          <div class="md:hidden">
+            <a href="/case-study.html?case=giros" class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+              <span class="text-sm font-medium font-inter tracking-wide uppercase">Explore</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="text-white text-xl font-semibold font-overpass leading-tight w-full">
+            GIROS : Jumeaux numérique du fleuve
+          </div>
+          <div class="text-white text-base font-roboto leading-relaxed w-full opacity-90">
+            Naviguer vers une gestion durable. Découvrez GIROS, conçu pour anticiper les défis du changement climatique et promouvoir une harmonie entre l'économie locale et la préservation de l'environnement.
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: NUMINA - Explore (avec image et lien vers case study) -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="flex flex-wrap gap-4 items-end w-full md:w-auto">
+          <div class="bg-[#e9d8b8] px-4 py-2 rounded-md w-full md:w-auto">
+            <div class="text-[#1a1c1b] text-lg font-medium font-inter tracking-tight">
+              🧮 AI platform
+            </div>
+          </div>
+          <div class="h-[360px] rounded-md w-full md:w-[938px] bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/images/NUMINA.jpg')"></div>
+        </div>
+        <div class="flex flex-col gap-4 grow">
+          <!-- Desktop CTA -->
+          <div class="hidden md:block">
+            <a href="/case-study.html?case=numinaforge" class="bg-[#e9d8b8] px-4 py-2 rounded-bl-md rounded-br-[80px] rounded-tl-md rounded-tr-[80px] w-fit flex items-center gap-3 hover:bg-[#e6d2b1] transition-colors duration-200">
+              <div class="text-black text-sm font-medium font-inter tracking-wide uppercase">
+                Explore
+              </div>
+              <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- Mobile CTA - format texte simple -->
+          <div class="md:hidden">
+            <a href="/case-study.html?case=numinaforge" class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+              <span class="text-sm font-medium font-inter tracking-wide uppercase">Explore</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="text-white text-xl font-semibold font-overpass leading-tight w-full">
+            NUMINA : Accélérer l'Intelligence Mathématique Universelle
+          </div>
+          <div class="text-white text-base font-roboto leading-relaxed w-full opacity-90">
+            IA et l'humain s'unissent pour rendre l'océan infini des mathématiques accessibles et collaboratives.
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Plaiad - Explore (avec image et lien vers case study) -->
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <div class="flex flex-wrap gap-4 items-end w-full md:w-auto">
+          <div class="bg-[#e9d8b8] px-4 py-2 rounded-md w-full md:w-auto">
+            <div class="text-[#1a1c1b] text-lg font-medium font-inter tracking-tight">
+              🌊 Digital twins of river
+            </div>
+          </div>
+          <div class="h-[360px] rounded-md w-full md:w-[938px] bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/images/PLAIAD.jpg')"></div>
+        </div>
+        <div class="flex flex-col gap-4 grow">
+          <!-- Desktop CTA -->
+          <div class="hidden md:block">
+            <a href="/case-study.html?case=plaiad" class="bg-[#e9d8b8] px-4 py-2 rounded-bl-md rounded-br-[80px] rounded-tl-md rounded-tr-[80px] w-fit flex items-center gap-3 hover:bg-[#e6d2b1] transition-colors duration-200">
+              <div class="text-black text-sm font-medium font-inter tracking-wide uppercase">
+                Explore
+              </div>
+              <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- Mobile CTA - format texte simple -->
+          <div class="md:hidden">
+            <a href="/case-study.html?case=plaiad" class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+              <span class="text-sm font-medium font-inter tracking-wide uppercase">Explore</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="text-white text-xl font-semibold font-overpass leading-tight w-full">
+            Plaiad - Design your personalized wellness & health journeys
+          </div>
+          <div class="text-white text-base font-roboto leading-relaxed w-full opacity-90">
+            Transforming the way healthcare is designed and delivered. Plaiad is revolutionizing patient engagement in their healthcare with solutions that improve adherence and professional practices.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR SERVICES Section -->
+<section class="bg-[#e9d8b8] py-16 full-width-section">
+  <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
+    <!-- Header -->
+    <div class="flex flex-col gap-2 mb-12">
+      <div class="flex items-center justify-start">
+        <div class="border border-[#5b5240] rounded-full px-2 py-1">
+          <span class="text-[#5b5240] text-sm font-medium font-roboto">Our services</span>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <h2 class="text-[#1a1c1b] text-3xl md:text-4xl font-medium font-roboto leading-tight">
+          Let's shape your next initiative
+        </h2>
+        <button class="bg-black text-white px-5 py-3 rounded-[40px] flex items-center gap-2 text-sm leading-[22px] hover:opacity-80 transition-colors flex-shrink-0">
+          <img src="/assets/images/footer/solar_calendar-bold-duotone.svg" alt="Calendar" class="w-5 h-5">
+          Book Intro
+        </button>
+      </div>
+      <p class="text-[#5b5240] text-base font-roboto">
+        Here's how we help you at each step
+      </p>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mb-8">
+      <!-- Visual Container -->
+      <div id="services-visual" class="rounded-lg overflow-hidden mb-8 transition-all duration-300">
+        <!-- Clarify Visual (default) -->
+        <div id="clarify-visual" class="w-full opacity-100 transition-opacity duration-300">
+          <img src="/assets/images/CASTAGNE-clarify.jpg" alt="Clarify" class="w-full h-auto">
+        </div>
+
+        <!-- Build Visual -->
+        <div id="build-visual" class="w-full opacity-0 transition-opacity duration-300 hidden">
+          <img src="/assets/images/CASTAGNE-Build.jpg" alt="Build" class="w-full h-auto">
+        </div>
+
+        <!-- Launch Visual -->
+        <div id="launch-visual" class="w-full opacity-0 transition-opacity duration-300 hidden">
+          <img src="/assets/images/CASTAGNE-Launch&SCale.jpg" alt="Launch & Scale" class="w-full h-auto">
+        </div>
+      </div>
+
+      <!-- Profiles List with improved gradients -->
+      <div class="relative overflow-hidden">
+        <!-- Left gradient with alpha -->
+        <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#e9d8b8] via-[#e9d8b8]/80 to-transparent z-10 pointer-events-none"></div>
+        <!-- Right gradient with alpha -->
+        <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#e9d8b8] via-[#e9d8b8]/80 to-transparent z-10 pointer-events-none"></div>
+        <!-- Profiles container -->
+        <div id="profiles-container" class="flex gap-8 transition-all duration-500 px-6 py-4">
+          <!-- Profiles will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex flex-col md:flex-row gap-0 border-t border-black">
+      <button id="clarify-tab" class="services-tab active flex-1 p-6 text-left" data-step="clarify">
+        <div class="text-2xl font-medium text-black">🧠 Clarify</div>
+        <div class="text-lg text-black mt-2">Unlock a clear, actionable vision to make better decisions</div>
+      </button>
+      <button id="build-tab" class="services-tab flex-1 p-6 text-left" data-step="build">
+        <div class="text-2xl font-medium text-black opacity-50">🛠 Build</div>
+        <div class="text-lg text-black opacity-50 mt-2">Go from idea to product/service.</div>
+      </button>
+      <button id="launch-tab" class="services-tab flex-1 p-6 text-left" data-step="launch">
+        <div class="text-2xl font-medium text-black opacity-50">🚀 Launch & Scale</div>
+        <div class="text-lg text-black opacity-50 mt-2">Bring your initiative to life and support it over time.</div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Services data with icons
+  const servicesData = {
+    clarify: {
+      visual: 'clarify-visual',
+      profiles: [
+        { icon: '🎯', title: 'Strategic Designers' },
+        { icon: '🔍', title: 'Product Researchers' },
+        { icon: '📊', title: 'Business Analysts' },
+        { icon: '🏗️', title: 'UX Architects' },
+        { icon: '🎨', title: 'Service Designers' },
+        { icon: '💡', title: 'Innovation Consultants' },
+        { icon: '📈', title: 'Market Researchers' },
+        { icon: '🧮', title: 'Data Scientists' },
+        { icon: '🎯', title: 'Strategic Designers' },
+        { icon: '🔍', title: 'Product Researchers' },
+        { icon: '📊', title: 'Business Analysts' },
+        { icon: '🏗️', title: 'UX Architects' }
+      ]
+    },
+    build: {
+      visual: 'build-visual',
+      profiles: [
+        { icon: '💻', title: 'Software Engineers' },
+        { icon: '🔧', title: 'Hardware Engineers' },
+        { icon: '🎮', title: 'Game Developers' },
+        { icon: '⚡', title: 'Full-Stack Developers' },
+        { icon: '🚀', title: 'DevOps Engineers' },
+        { icon: '🎨', title: 'UI/UX Designers' },
+        { icon: '📋', title: 'Product Managers' },
+        { icon: '🏛️', title: 'Technical Architects' },
+        { icon: '💻', title: 'Software Engineers' },
+        { icon: '🔧', title: 'Hardware Engineers' },
+        { icon: '🎮', title: 'Game Developers' },
+        { icon: '⚡', title: 'Full-Stack Developers' }
+      ]
+    },
+    launch: {
+      visual: 'launch-visual',
+      profiles: [
+        { icon: '📈', title: 'Growth Hackers' },
+        { icon: '📢', title: 'Marketing Specialists' },
+        { icon: '💰', title: 'Sales Strategists' },
+        { icon: '🤝', title: 'Customer Success Managers' },
+        { icon: '🌐', title: 'Business Developers' },
+        { icon: '🤝', title: 'Partnership Managers' },
+        { icon: '📊', title: 'Scale Architects' },
+        { icon: '⚙️', title: 'Operations Managers' },
+        { icon: '📈', title: 'Growth Hackers' },
+        { icon: '📢', title: 'Marketing Specialists' },
+        { icon: '💰', title: 'Sales Strategists' },
+        { icon: '🤝', title: 'Customer Success Managers' }
+      ]
+    }
+  };
+
+  let currentStep = 'clarify';
+  let animationInterval;
+
+  // Initialize
+  function initServices() {
+    updateVisual('clarify');
+    updateProfiles('clarify');
+    
+    // Start animation after DOM is fully loaded
+    setTimeout(() => {
+      startProfileAnimation();
+    }, 500);
+  }
+
+  // Update visual with faster fade animation
+  function updateVisual(step) {
+    const allVisuals = ['clarify-visual', 'build-visual', 'launch-visual'];
+    
+    // Hide all visuals first
+    allVisuals.forEach(visualId => {
+      const visual = document.getElementById(visualId);
+      visual.style.opacity = '0';
+      visual.classList.add('hidden');
+    });
+    
+    // Show the target visual
+    setTimeout(() => {
+      allVisuals.forEach(visualId => {
+        const visual = document.getElementById(visualId);
+        if (visualId === servicesData[step].visual) {
+          visual.classList.remove('hidden');
+          visual.style.opacity = '1';
+        }
+      });
+    }, 100);
+  }
+
+  // Update profiles with icons
+  function updateProfiles(step) {
+    const container = document.getElementById('profiles-container');
+    const profiles = servicesData[step].profiles;
+    
+    container.innerHTML = '';
+    profiles.forEach(profile => {
+      const profileElement = document.createElement('div');
+      profileElement.className = 'flex items-center gap-3 text-[#5b5240] whitespace-nowrap flex-shrink-0';
+      profileElement.innerHTML = `
+        <span class="text-2xl">${profile.icon}</span>
+        <span class="text-base font-medium">${profile.title}</span>
+      `;
+      container.appendChild(profileElement);
+    });
+  }
+
+  // Start profile animation
+  function startProfileAnimation() {
+    const container = document.getElementById('profiles-container');
+    if (!container) return;
+    
+    // Clear any existing animation
+    if (animationInterval) {
+      clearInterval(animationInterval);
+    }
+    
+    // Wait for images to load and DOM to be ready
+    setTimeout(() => {
+      const containerWidth = container.offsetWidth;
+      const scrollWidth = container.scrollWidth;
+      
+      console.log('Container width:', containerWidth, 'Scroll width:', scrollWidth);
+      
+      // Only animate if content overflows
+      if (scrollWidth > containerWidth) {
+        console.log('Starting horizontal animation');
+        
+        // Create a copy of the profiles for seamless loop
+        const originalContent = container.innerHTML;
+        container.innerHTML = originalContent + originalContent;
+        
+        let scrollPos = 0;
+        const scrollSpeed = 1;
+        
+        animationInterval = setInterval(() => {
+          scrollPos += scrollSpeed;
+          
+          // Reset position when we've scrolled the width of original content
+          if (scrollPos >= scrollWidth) {
+            scrollPos = 0;
+          }
+          
+          container.scrollLeft = scrollPos;
+        }, 30);
+      } else {
+        console.log('No animation needed - content fits');
+      }
+    }, 1000); // Wait longer for everything to load
+  }
+
+  // Stop profile animation
+  function stopProfileAnimation() {
+    if (animationInterval) {
+      clearInterval(animationInterval);
+    }
+  }
+
+  // Tab click handlers
+  document.querySelectorAll('.services-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const step = this.dataset.step;
+      
+      // Update active tab
+      document.querySelectorAll('.services-tab').forEach(t => {
+        t.classList.remove('active');
+        t.querySelector('div:first-child').classList.add('opacity-50');
+        t.querySelector('div:last-child').classList.add('opacity-50');
+      });
+      
+      this.classList.add('active');
+      this.querySelector('div:first-child').classList.remove('opacity-50');
+      this.querySelector('div:last-child').classList.remove('opacity-50');
+      
+      // Update content
+      currentStep = step;
+      updateVisual(step);
+      updateProfiles(step);
+      
+      // Restart animation after a short delay to ensure DOM is updated
+      stopProfileAnimation();
+      setTimeout(() => {
+        startProfileAnimation();
+      }, 500);
+    });
+  });
+
+  // Initialize on load
+  initServices();
+
+  // Responsive handling avec debounce
+  function handleResize() {
+    stopProfileAnimation();
+    setTimeout(startProfileAnimation, 100);
+  }
+
+  // Debounce pour éviter les appels multiples lors du redimensionnement
+  let resizeTimeout;
+  function debouncedHandleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(handleResize, 250); // Attendre 250ms après la fin du resize
+  }
+
+  window.addEventListener('resize', debouncedHandleResize);
+});
+</script>
+
+<style>
+.services-tab {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.services-tab:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.services-tab.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.services-tab.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: black;
+}
+
+#profiles-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#profiles-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive pour le HERO - basé sur le design Figma */
+@media (max-width: 1024px) {
+  /* Desktop vers tablet */
+  .text-\[70px\] {
+    font-size: 3.5rem;
+  }
+  
+  .text-\[36px\] {
+    font-size: 1.75rem;
+  }
+  
+  .text-\[30px\] {
+    font-size: 1.5rem;
+  }
+  
+  .text-\[29px\] {
+    font-size: 1.125rem;
+  }
+  
+  .h-\[651px\] {
+    height: 400px;
+  }
+  
+  .w-\[584px\] {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .h-\[110px\] {
+    height: 80px;
+  }
+  
+  .gap-20 {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tablet vers mobile */
+  .text-\[70px\] {
+    font-size: 2.5rem;
+  }
+  
+  .text-\[42px\] {
+    font-size: 1.75rem;
+  }
+  
+  .text-\[36px\] {
+    font-size: 1.25rem;
+  }
+  
+  .text-\[30px\] {
+    font-size: 1.125rem;
+  }
+  
+  .text-\[29px\] {
+    font-size: 1rem;
+  }
+  
+  .h-\[651px\] {
+    height: 300px;
+  }
+  
+  .w-\[584px\] {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .h-\[110px\] {
+    height: 60px;
+  }
+  
+  .gap-20 {
+    gap: 1.5rem;
+  }
+  
+  /* Optimisations mobile pour le HERO */
+  .min-h-screen {
+    min-height: auto;
+  }
+  
+  .py-10 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .gap-6 {
+    gap: 1rem;
+  }
+  
+  .min-h-\[400px\] {
+    min-height: 300px;
+  }
+  
+  /* Optimisation des images HERO sur mobile */
+  .object-contain {
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  /* Responsive pour les images HERO */
+  @media (max-width: 768px) {
+    .max-w-\[584px\] {
+      max-width: 100%;
+    }
+    
+    .h-\[651px\] {
+      height: 300px;
+    }
+    
+    .h-\[110px\] {
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .h-\[651px\] {
+      height: 250px;
+    }
+    
+    .h-\[110px\] {
+      height: 60px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  /* Mobile petit */
+  .text-\[70px\] {
+    font-size: 2rem;
+  }
+  
+  .text-\[42px\] {
+    font-size: 1.5rem;
+  }
+  
+  .text-\[36px\] {
+    font-size: 1rem;
+  }
+  
+  .text-\[30px\] {
+    font-size: 1rem;
+  }
+  
+  .text-\[29px\] {
+    font-size: 0.875rem;
+  }
+  
+  .h-\[651px\] {
+    height: 250px;
+  }
+  
+  .w-\[584px\] {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .h-\[110px\] {
+    height: 50px;
+  }
+  
+  .gap-20 {
+    gap: 1rem;
+  }
+}
+
+/* Assurer que les sections prennent toute la largeur sur tous les appareils */
+.full-width-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* Styles spécifiques pour le texte CASTAGNE sur mobile */
+@media (max-width: 1024px) {
+  .lg\:hidden {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-tab {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .services-tab:last-child {
+    border-bottom: none;
+  }
+}
+</style> 

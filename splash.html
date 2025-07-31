@@ -1,0 +1,373 @@
+---
+layout: null
+title: CASTAGNE - Coming Soon
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inria+Serif:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'inria': ['Inria Serif', 'serif'],
+            'roboto': ['Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #2D9CDB;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2D9CDB/80;
+    }
+  </style>
+</head>
+<body class="bg-neutral-950 text-[#F5EBD9] font-inter min-h-screen w-full">
+  <!-- Main Content -->
+  <main class="relative w-full">
+    <!-- ======================================== -->
+    <!-- SPLASH SCREEN - CASTAGNE -->
+    <!-- ======================================== -->
+    <section class="bg-[#1a1c1b] py-10 flex flex-col items-center justify-center relative min-h-screen full-width-section overflow-hidden">
+      <!-- Carrousel d'images en arrière-plan -->
+      <div class="absolute inset-0 w-full h-full">
+        <img src="/assets/images/Diaporama/diapo1.jpg" alt="Background 1" class="carousel-bg absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[4000ms] ease-in-out" />
+        <img src="/assets/images/Diaporama/diapo2.jpg" alt="Background 2" class="carousel-bg absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[4000ms] ease-in-out" />
+        <img src="/assets/images/Diaporama/diapo3.jpg" alt="Background 3" class="carousel-bg absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[4000ms] ease-in-out" />
+        <img src="/assets/images/Diaporama/diapo4.jpg" alt="Background 4" class="carousel-bg absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[4000ms] ease-in-out" />
+      </div>
+      
+      <!-- Overlay sombre pour améliorer la lisibilité -->
+      <div class="absolute inset-0 bg-black/40"></div>
+      
+      <!-- Contenu principal (textes et illustrations) -->
+      <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-stretch justify-start px-4 md:px-6 min-h-[400px] lg:min-h-[761px]">
+        <!-- HERO-illustration-2 en haut sur mobile - avec dimensions originales respectées -->
+        <div class="lg:hidden w-full flex justify-center px-4 md:px-6 py-4">
+          <img src="/assets/images/HERO-illustration-2.png" alt="CASTAGNE" class="w-full max-w-[584px] h-auto object-contain" />
+        </div>
+        
+        <!-- Texte principal -->
+        <div class="flex-1 flex flex-col gap-16 items-start justify-between h-full">
+          <!-- Titre principal avec Inter Bold 70px -->
+          <div class="font-['Inter'] font-bold leading-[0] text-[#e9d8b9] text-[70px] text-left w-full">
+            <p class="block leading-[normal]">
+              We build operations
+              <br />
+              at the edge.
+            </p>
+          </div>
+          
+          <!-- Liste des services avec Inter Regular 36px -->
+          <div class="font-['Inter'] font-normal leading-[normal] text-[#e9d8b9] text-left tracking-[3.96px] w-full">
+            <p class="mb-0">
+              <span class="text-[29px] tracking-[3.19px]">↓</span>
+              <span class="text-[42px] lg:text-[36px]">
+                <br aria-hidden="true" />
+                <br aria-hidden="true" />
+                INTERFACES.
+              </span>
+            </p>
+            <p class="block mb-0 text-[42px] lg:text-[36px] whitespace-pre-wrap">AUTOMATION.</p>
+            <p class="block mb-0 text-[42px] lg:text-[36px]">SENSORS.</p>
+            <p class="block text-[42px] lg:text-[36px]">DECISIONS.</p>
+          </div>
+          
+          <!-- Sous-titre avec Inria Serif 30px -->
+          <div class="font-['Inria_Serif'] leading-[0] text-[#e9d8b9] text-[30px] text-left w-full">
+            <p class="leading-[normal]">
+              <span>— </span>
+              <span class="font-['Inria_Serif'] font-bold">
+                aligned
+              </span>
+              <span> where it matters.</span>
+            </p>
+          </div>
+          
+          <!-- CTA simplifié avec Roboto 18px - toujours en bas à gauche -->
+          <div class="flex flex-col gap-2.5 items-start justify-center w-[246px]">
+            <div class="bg-[#ead7b7] flex flex-row gap-2.5 items-center justify-center px-5 py-3 rounded-[40px] relative">
+              <div aria-hidden="true" class="absolute border border-[rgba(255,255,255,0.6)] border-solid inset-0 pointer-events-none rounded-[40px]"></div>
+              <div class="relative shrink-0 size-5">
+                <img src="/assets/images/footer/solar_calendar-bold-duotone.svg" alt="Calendar" class="block max-w-none size-full filter brightness-0" />
+              </div>
+              <div class="font-['Roboto'] font-normal leading-[0] relative shrink-0 text-[#000000] text-[18px] text-center text-nowrap" style="font-variation-settings: 'wdth' 100">
+                <p class="block leading-[normal] whitespace-pre">Book Intro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Illustrations - Desktop: deux illustrations distinctes -->
+        <div class="hidden lg:flex flex-col gap-10 items-start justify-start relative self-stretch shrink-0">
+          <!-- Illustration principale - HERO-illustration-1 -->
+          <div class="flex items-center justify-center relative shrink-0">
+            <img src="/assets/images/HERO-illustration-1.png" alt="Hero Illustration 1" class="h-[651px] w-[584px] object-contain" />
+          </div>
+          <!-- Illustration bas - HERO-illustration-2 -->
+          <div class="flex justify-center shrink-0">
+            <img src="/assets/images/HERO-illustration-2.png" alt="CASTAGNE" class="h-[110px] w-[584px] object-contain" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+  /* Responsive pour le HERO - basé sur le design Figma */
+  @media (max-width: 1024px) {
+    /* Desktop vers tablet */
+    .text-\[70px\] {
+      font-size: 3.5rem;
+    }
+    
+    .text-\[42px\] {
+      font-size: 1.75rem;
+    }
+    
+    .text-\[36px\] {
+      font-size: 1.75rem;
+    }
+    
+    .text-\[30px\] {
+      font-size: 1.5rem;
+    }
+    
+    .text-\[29px\] {
+      font-size: 1.125rem;
+    }
+    
+    .h-\[651px\] {
+      height: 400px;
+    }
+    
+    .w-\[584px\] {
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .h-\[110px\] {
+      height: 80px;
+    }
+    
+    .gap-20 {
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Tablet vers mobile */
+    .text-\[70px\] {
+      font-size: 2.5rem;
+    }
+    
+    .text-\[42px\] {
+      font-size: 1.75rem;
+    }
+    
+    .text-\[36px\] {
+      font-size: 1.25rem;
+    }
+    
+    .text-\[30px\] {
+      font-size: 1.125rem;
+    }
+    
+    .text-\[29px\] {
+      font-size: 1rem;
+    }
+    
+    .h-\[651px\] {
+      height: 300px;
+    }
+    
+    .w-\[584px\] {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .h-\[110px\] {
+      height: 60px;
+    }
+    
+    .gap-20 {
+      gap: 1.5rem;
+    }
+    
+    /* Optimisations mobile pour le HERO */
+    .min-h-screen {
+      min-height: auto;
+    }
+    
+    .py-10 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    .gap-16 {
+      gap: 1rem;
+    }
+    
+    .min-h-\[400px\] {
+      min-height: 300px;
+    }
+    
+    /* Optimisation des images HERO sur mobile */
+    .object-contain {
+      object-fit: contain;
+      object-position: center;
+    }
+    
+    /* Responsive pour les images HERO */
+    @media (max-width: 768px) {
+      .max-w-\[584px\] {
+        max-width: 100%;
+      }
+      
+      .h-\[651px\] {
+        height: 300px;
+      }
+      
+      .h-\[110px\] {
+        height: 80px;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .h-\[651px\] {
+        height: 250px;
+      }
+      
+      .h-\[110px\] {
+        height: 60px;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    /* Mobile petit */
+    .text-\[70px\] {
+      font-size: 2rem;
+    }
+    
+    .text-\[42px\] {
+      font-size: 1.5rem;
+    }
+    
+    .text-\[36px\] {
+      font-size: 1rem;
+    }
+    
+    .text-\[30px\] {
+      font-size: 1rem;
+    }
+    
+    .text-\[29px\] {
+      font-size: 0.875rem;
+    }
+    
+    .h-\[651px\] {
+      height: 250px;
+    }
+    
+    .w-\[584px\] {
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .h-\[110px\] {
+      height: 50px;
+    }
+    
+    .gap-20 {
+      gap: 1rem;
+    }
+  }
+
+  /* Assurer que les sections prennent toute la largeur sur tous les appareils */
+  .full-width-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  /* Styles spécifiques pour le texte CASTAGNE sur mobile */
+  @media (max-width: 1024px) {
+    .lg\:hidden {
+      display: block;
+    }
+  }
+
+  /* Styles pour le carrousel en arrière-plan */
+  .carousel-bg.active {
+    opacity: 1 !important;
+  }
+  </style>
+
+  <script>
+  // Carrousel d'images en arrière-plan avec animation fade-in
+  document.addEventListener('DOMContentLoaded', function() {
+    const backgroundImages = document.querySelectorAll('.carousel-bg');
+    
+    let currentIndex = 0;
+    const totalImages = backgroundImages.length;
+    
+    // Fonction pour afficher une image de fond
+    function showBackgroundImage(index) {
+      // Masquer toutes les images
+      backgroundImages.forEach(img => img.classList.remove('active'));
+      
+      // Afficher l'image courante
+      backgroundImages[index].classList.add('active');
+    }
+    
+    // Fonction pour passer à l'image suivante
+    function nextBackgroundImage() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      showBackgroundImage(currentIndex);
+    }
+    
+    // Auto-play du carrousel en arrière-plan (toutes les 8 secondes)
+    setInterval(nextBackgroundImage, 8000);
+    
+    // Afficher la première image au chargement
+    showBackgroundImage(0);
+  });
+  </script>
+</body>
+</html> 

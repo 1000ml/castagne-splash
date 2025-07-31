@@ -1,0 +1,48 @@
+{
+  "metrics": [
+    {
+      "label": "Documents Analysés",
+      "value": "1.2M+",
+      "description": "Nombre total de documents traités par notre IA",
+      "trend": "+15%",
+      "icon": "📄"
+    },
+    {
+      "label": "Précision IA",
+      "value": "98.7%",
+      "description": "Taux de précision de nos modèles d'analyse",
+      "trend": "+2.3%",
+      "icon": "🎯"
+    },
+    {
+      "label": "Temps de Traitement",
+      "value": "< 2s",
+      "description": "Délai moyen d'analyse par document",
+      "trend": "-40%",
+      "icon": "⚡"
+    },
+    {
+      "label": "Utilisateurs Actifs",
+      "value": "50K+",
+      "description": "Utilisateurs réguliers de la plateforme",
+      "trend": "+25%",
+      "icon": "👥"
+    },
+    {
+      "label": "Insights Générés",
+      "value": "2.5M+",
+      "description": "Insights automatiques extraits",
+      "trend": "+180%",
+      "icon": "💡"
+    },
+    {
+      "label": "Uptime",
+      "value": "99.9%",
+      "description": "Disponibilité de la plateforme",
+      "trend": "stable",
+      "icon": "🟢"
+    }
+  ],
+  "lastUpdate": "2024-01-15T10:30:00Z",
+  "refreshInterval": 300
+} 

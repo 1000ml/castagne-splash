@@ -1,0 +1,78 @@
+<nav class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-2 group">
+          <div class="w-8 h-8 bg-gradient-to-br from-[#2D9CDB] to-[#2D9CDB]/70 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white font-bold text-sm">C</span>
+          </div>
+          <span class="text-xl font-space font-bold text-[#F5EBD9] group-hover:text-[#2D9CDB] transition-colors duration-300">
+            CASTAGNE
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          {% for item in navigation.main %}
+          <a href="{{ item.url }}" 
+             class="text-[#F5EBD9] hover:text-[#2D9CDB] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-neutral-800/50 relative group">
+            <span class="flex items-center space-x-1">
+              <span class="text-sm">{{ item.icon }}</span>
+              <span>{{ item.label }}</span>
+            </span>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2D9CDB] group-hover:w-full transition-all duration-300"></span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href="#contact" 
+           class="bg-[#2D9CDB] hover:bg-[#2D9CDB]/80 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#2D9CDB]/25">
+          Commencer
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" 
+                class="mobile-menu-button bg-neutral-800 hover:bg-neutral-700 text-[#F5EBD9] hover:text-[#2D9CDB] p-2 rounded-md transition-colors duration-300"
+                aria-controls="mobile-menu" 
+                aria-expanded="false">
+          <span class="sr-only">Ouvrir le menu</span>
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden bg-neutral-950/95 backdrop-blur-md border-t border-neutral-800/50">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {% for item in navigation.main %}
+      <a href="{{ item.url }}" 
+         class="text-[#F5EBD9] hover:text-[#2D9CDB] hover:bg-neutral-800/50 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300">
+        <span class="flex items-center space-x-2">
+          <span>{{ item.icon }}</span>
+          <span>{{ item.label }}</span>
+        </span>
+      </a>
+      {% endfor %}
+      <div class="pt-4">
+        <a href="#contact" 
+           class="bg-[#2D9CDB] hover:bg-[#2D9CDB]/80 text-white px-6 py-3 rounded-lg font-medium block text-center transition-all duration-300">
+          Commencer
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer for fixed navigation -->
+<div class="h-16"></div> 

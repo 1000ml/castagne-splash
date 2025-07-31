@@ -1,0 +1,537 @@
+<footer id="dynamic-footer" class="relative bg-black/80 bg-cover bg-center bg-no-repeat pt-20 pb-0 transition-all duration-300 ease-in-out w-full overflow-x-hidden">
+  <!-- Container avec grille responsive -->
+  <div class="footer-container">
+    <!-- Contenu du footer -->
+    <div class="footer-content">
+      <!-- Première rangée -->
+      <div class="footer-row-1">
+        <!-- Bloc Logo CASTAGNE -->
+        <div class="footer-logo-block">
+          <div class="rounded-[20px] p-5 flex items-center justify-center" id="logo-block">
+            <div class="w-[98px] h-[114px] flex items-center justify-center">
+              <img src="/assets/images/footer/Bloc_Castagne_logo.svg" alt="CASTAGNE" class="w-full h-full object-contain" id="logo-castagne">
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc Quicklinks -->
+        <div class="footer-quicklinks-block rounded-[20px] p-5" id="quicklinks-block">
+          <div class="flex flex-col gap-5">
+            <h3 class="text-xl font-bold leading-7" id="quicklinks-title">Quicklinks</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <img src="/assets/images/footer/icn-about.svg" alt="About" class="w-4 h-4" id="about-icon">
+                </div>
+                <a href="#about" class="text-base leading-6 hover:opacity-80 transition-colors" id="about-link">About</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <img src="/assets/images/footer/icn-works.svg" alt="Works" class="w-4 h-4" id="works-icon">
+                </div>
+                <a href="#works" class="text-base leading-6 hover:opacity-80 transition-colors" id="works-link">Works</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <img src="/assets/images/footer/icn_visual.svg" alt="Visual" class="w-4 h-4" id="visual-icon">
+                </div>
+                <a href="#visual" class="text-base leading-6 hover:opacity-80 transition-colors" id="visual-link">Visual</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc Open Source et Legal -->
+        <div class="footer-opensource-legal-block">
+          <!-- Drive Open Source -->
+          <div class="rounded-[20px] p-5" id="opensource-block">
+            <h3 class="text-xl font-bold leading-7 mb-1" id="opensource-title">Drive Open source</h3>
+            <a href="https://docs.google.com/presentation/d/1WUbNWUVSFXH6n4tzkEeKyMCTr8uPNlEteFC71fgUrBw/edit?usp=sharing" 
+               target="_blank" 
+               class="text-base leading-6 hover:opacity-80 transition-colors underline" id="opensource-link">
+              Explore our Open Source projects
+            </a>
+          </div>
+          
+          <!-- Legal -->
+          <div class="rounded-[20px] p-5" id="legal-block">
+            <button onclick="openLegalPopup()" class="text-base leading-6 hover:opacity-80 transition-colors underline" id="legal-link">
+              Terms & Conditions
+            </button>
+            <p class="text-sm leading-[22px]" id="legal-text">© All rights reserved 2025 CASTAGNE.</p>
+          </div>
+        </div>
+
+        <!-- Bloc Localisation -->
+        <div class="footer-location-block rounded-[20px] p-5" id="location-block">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 flex items-center justify-center">
+                <img src="/assets/images/footer/ri_map-pin-fill.svg" alt="Location" class="w-6 h-6" id="location-icon">
+              </div>
+              <h3 class="text-xl font-bold leading-7" id="location-title">Our FabLab, in Paris</h3>
+            </div>
+            <div class="w-[255px] h-12 mb-2">
+              <img src="/assets/images/footer/Woma_logo.png" alt="WOMA FabLab" class="w-full h-full object-contain">
+            </div>
+            <a href="https://maps.google.com/?q=15bis+Rue+Léon+Giraud,+75019+Paris,+France" 
+               target="_blank" 
+               class="text-base leading-6 hover:opacity-80 transition-colors underline" id="address-link">
+              15bis Rue Léon Giraud, 75019 Paris
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deuxième rangée -->
+      <div class="footer-row-2" id="contact-row">
+        <!-- Bloc Contact principal -->
+        <div class="footer-contact-main rounded-[20px] p-5 flex-1 h-[82px]" id="contact-block">
+          <div class="flex items-center gap-5 h-full">
+            <div class="w-[58px] h-[58px] flex-shrink-0">
+              <img src="/assets/images/footer/Laurent.png" alt="Laurent" class="w-full h-full object-contain rounded-full">
+            </div>
+            <p class="text-xl leading-7 flex-1" id="contact-text">
+              <span class="italic">"Let's spark something together"</span> — just an email away →
+            </p>
+          </div>
+        </div>
+
+        <!-- Bloc Actions -->
+        <div class="rounded-[20px] p-5 flex-shrink-0 h-[82px]" id="actions-block">
+          <div class="flex items-center gap-2.5 h-full">
+            <button class="px-5 py-3 rounded-[40px] flex items-center gap-2 text-sm leading-[22px] hover:opacity-80 transition-colors flex-shrink-0 bg-white text-black" id="book-intro-button">
+              <img src="/assets/images/footer/solar_calendar-bold-duotone.svg" alt="Calendar" class="w-5 h-5" id="calendar-icon">
+              Book Intro
+            </button>
+            <a href="#linkedin" class="w-[42px] h-[42px] flex items-center justify-center flex-shrink-0">
+              <img src="/assets/images/footer/mdi_linkedin.png" alt="LinkedIn" class="w-full h-full object-contain" id="linkedin-icon">
+            </a>
+            <a href="#whatsapp" class="w-[42px] h-[42px] flex items-center justify-center flex-shrink-0">
+              <img src="/assets/images/footer/mingcute_whatsapp-fill.svg" alt="WhatsApp" class="w-full h-full object-contain" id="whatsapp-icon">
+            </a>
+            <a href="#signal" class="w-[38px] h-[38px] flex items-center justify-center flex-shrink-0">
+              <img src="/assets/images/footer/simple-icons_signal.svg" alt="Signal" class="w-full h-full object-contain" id="signal-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+
+            <!-- Actions mobile - MÊME STRUCTURE que les blocs qui fonctionnent -->
+      <div class="rounded-[20px] p-5 hidden" id="actions-mobile-block">
+        <div class="flex items-center justify-center gap-2.5">
+          <button class="px-5 py-3 rounded-[40px] flex items-center gap-2 text-sm leading-[22px] hover:opacity-80 transition-colors bg-white text-black" id="mobile-book-intro-button">
+            <img src="/assets/images/footer/solar_calendar-bold-duotone.svg" alt="Calendar" class="w-5 h-5">
+            Book Intro
+          </button>
+          <a href="#linkedin" class="w-[42px] h-[42px] flex items-center justify-center">
+            <img src="/assets/images/footer/mdi_linkedin.png" alt="LinkedIn" class="w-full h-full object-contain">
+          </a>
+          <a href="#whatsapp" class="w-[42px] h-[42px] flex items-center justify-center">
+            <img src="/assets/images/footer/mingcute_whatsapp-fill.svg" alt="WhatsApp" class="w-full h-full object-contain">
+          </a>
+          <a href="#signal" class="w-[38px] h-[38px] flex items-center justify-center">
+            <img src="/assets/images/footer/simple-icons_signal.svg" alt="Signal" class="w-full h-full object-contain">
+          </a>
+        </div>
+      </div>
+
+      <!-- Troisième rangée - Logo CASTAGNE sans bloc -->
+      <div class="footer-logo-bottom">
+        <svg width="1260" height="105" viewBox="0 0 1260 105" fill="none" xmlns="http://www.w3.org/2000/svg" id="castagne-footer-svg" class="w-full h-auto">
+          <path d="M82.4551 0C91.7174 5.862e-06 100.43 1.33418 108.594 4.00293C116.914 6.67179 124.294 10.5966 130.73 15.7773C137.324 20.801 142.74 27.0808 146.979 34.6162C151.217 42.1518 153.886 50.787 154.985 60.5205H119.191C118.563 56.2817 117.15 52.4353 114.952 48.9814C112.754 45.3707 110.007 42.2304 106.71 39.5615C103.413 36.8929 99.6457 34.8523 95.4072 33.4395C91.3255 31.8695 87.0078 31.084 82.4551 31.084C74.1345 31.084 67.0694 32.7325 61.2607 36.0293C55.4521 39.1691 50.7426 43.4868 47.1318 48.9814C43.521 54.3192 40.8519 60.442 39.125 67.3496C37.5551 74.2572 36.7705 81.4008 36.7705 88.7793C36.7705 94.2815 37.2489 99.6882 38.2012 105H0.969727C0.513797 101.932 0.189199 98.8083 0 95.6289V81.7676C0.576906 71.8674 2.39367 62.587 5.4502 53.9268C9.218 43.0943 14.6346 33.6746 21.6992 25.668C28.7638 17.6615 37.3982 11.3818 47.6025 6.8291C57.964 2.27634 69.5817 0 82.4551 0Z" fill="white"/>
+          <path d="M303.245 105H266.859L246.403 45.4502H245.933L224.795 105H189.372L227.564 4.00391H265.478L303.245 105Z" fill="white"/>
+          <path d="M400.782 0C409.574 1.18073e-05 417.973 1.02065 425.979 3.06152C434.143 4.94544 441.365 8.08475 447.645 12.4805C453.924 16.8761 458.869 22.5282 462.479 29.4355C466.247 36.1862 468.132 44.4286 468.132 54.1621H432.338C432.024 49.1386 430.925 44.9784 429.041 41.6816C427.314 38.3848 424.958 35.7941 421.976 33.9102C418.993 32.0264 415.539 30.6922 411.614 29.9072C407.847 29.1223 403.686 28.7295 399.134 28.7295C396.151 28.7295 393.168 29.0439 390.186 29.6719C387.203 30.2998 384.455 31.3988 381.943 32.9688C379.588 34.5387 377.626 36.5006 376.056 38.8555C374.486 41.2103 373.701 44.1931 373.701 47.8037C373.701 51.1005 374.329 53.7696 375.585 55.8105C376.841 57.8514 379.274 59.735 382.885 61.4619C386.652 63.1888 391.755 64.9157 398.191 66.6426C404.785 68.3695 413.342 70.5675 423.86 73.2363C427 73.8643 431.317 75.0418 436.812 76.7686C442.463 78.3385 448.037 80.9293 453.531 84.54C459.026 88.1509 463.735 93.0179 467.66 99.1406C468.889 100.937 469.932 102.89 470.791 105H412.407C410.419 104.429 408.35 103.888 406.198 103.379C400.233 101.966 394.188 100.396 388.065 98.6689C381.786 97.099 375.663 95.2154 369.697 93.0176C363.732 90.6628 358.394 87.68 353.685 84.0693C348.975 80.4585 345.128 75.9842 342.146 70.6465C339.32 65.1518 337.907 58.5578 337.907 50.8652C337.907 42.2307 339.712 34.7738 343.323 28.4941C347.091 22.0575 351.958 16.7192 357.924 12.4805C363.889 8.24196 370.64 5.10236 378.175 3.06152C385.71 1.02064 393.247 0 400.782 0Z" fill="white"/>
+          <path d="M620.354 35.0879H569.96V105H532.988V35.0879H482.594V4.00391H620.354V35.0879Z" fill="white"/>
+          <path d="M739.726 105H703.34L682.884 45.4502H682.413L661.275 105H625.853L664.045 4.00391H701.958L739.726 105Z" fill="white"/>
+          <path d="M854.691 0C863.326 6.28845e-06 871.647 1.33408 879.653 4.00293C887.817 6.5148 895.117 10.2829 901.554 15.3066C908.147 20.3303 913.563 26.5317 917.802 33.9102C922.041 41.2887 924.631 49.7663 925.573 59.3428H890.25C888.052 49.9236 883.814 42.8591 877.534 38.1494C871.255 33.4397 863.64 31.084 854.691 31.084C846.371 31.084 839.306 32.7325 833.497 36.0293C827.688 39.1691 822.979 43.4868 819.368 48.9814C815.757 54.3192 813.088 60.442 811.361 67.3496C809.791 74.2572 809.007 81.4008 809.007 88.7793C809.007 94.2815 809.485 99.6882 810.438 105H773.206C772.427 99.7554 772.035 94.3486 772.035 88.7793C772.035 76.22 773.919 64.6021 777.687 53.9268C781.454 43.0943 786.871 33.6746 793.936 25.668C801 17.6615 809.635 11.3818 819.839 6.8291C830.2 2.27634 841.818 0 854.691 0Z" fill="white"/>
+          <path d="M928.164 105H857.518V81.2432H928.164V105Z" fill="white"/>
+          <path d="M1057.59 105H1021.33L993.107 59.5791H992.637V105H958.02V4.00391H994.756L1057.59 105Z" fill="white"/>
+          <path d="M1100.02 105H1065.4V4.00391H1100.02V105Z" fill="white"/>
+          <path d="M1258.32 35.0879H1169.54V77.1592H1251.02V105H1132.57V4.00391H1258.32V35.0879Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Popup -->
+  <div id="legalPopup" class="fixed inset-0 bg-black/50 hidden z-50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="bg-white rounded-[20px] p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-black">Terms & Conditions</h2>
+          <button onclick="closeLegalPopup()" class="text-gray-500 hover:text-black text-2xl">
+            ×
+          </button>
+        </div>
+        <div class="prose prose-sm max-w-none">
+          <h3>1. Acceptance of Terms</h3>
+          <p>By accessing and using the CASTAGNE website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+          
+          <h3>2. Use License</h3>
+          <p>Permission is granted to temporarily download one copy of the materials (information or software) on CASTAGNE's website for personal, non-commercial transitory viewing only.</p>
+          
+          <h3>3. Disclaimer</h3>
+          <p>The materials on CASTAGNE's website are provided on an 'as is' basis. CASTAGNE makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+          
+          <h3>4. Limitations</h3>
+          <p>In no event shall CASTAGNE or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on CASTAGNE's website.</p>
+          
+          <h3>5. Revisions and Errata</h3>
+          <p>The materials appearing on CASTAGNE's website could include technical, typographical, or photographic errors. CASTAGNE does not warrant that any of the materials on its website are accurate, complete or current.</p>
+          
+          <h3>6. Links</h3>
+          <p>CASTAGNE has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by CASTAGNE of the site.</p>
+          
+          <h3>7. Site Terms of Use Modifications</h3>
+          <p>CASTAGNE may revise these terms of use for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms and Conditions of Use.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script footer-theme.js pour la page d'accueil -->
+  <script src="/assets/js/footer-theme.js"></script>
+  <script>
+    // Fonction pour ouvrir le popup légal
+    function openLegalPopup() {
+      document.getElementById('legalPopup').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Fonction pour fermer le popup légal
+    function closeLegalPopup() {
+      document.getElementById('legalPopup').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Fermer le popup en cliquant à l'extérieur
+    document.getElementById('legalPopup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLegalPopup();
+      }
+    });
+  </script>
+
+  <style>
+/* ============================================================
+   FOOTER RESPONSIVE - 3 BREAKPOINTS FIGMA
+   ============================================================ */
+
+/* === VARIABLES ET BASE === */
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Transitions fluides pour tous les éléments */
+#dynamic-footer * {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === DESKTOP (1240px+) === */
+@media (min-width: 1240px) {
+  /* Première rangée - 4 blocs horizontaux avec hauteurs égalisées */
+  .footer-row-1 {
+    display: flex;
+    gap: 1.25rem;
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  .footer-logo-block {
+    width: 198px;
+    flex-shrink: 0;
+  }
+  
+  .footer-logo-block #logo-block {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-quicklinks-block {
+    width: 222px;
+    flex-shrink: 0;
+    height: 200px;
+  }
+  
+  .footer-location-block {
+    width: 391px;
+    flex-shrink: 0;
+    height: 200px;
+  }
+  
+  .footer-opensource-legal-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 200px;
+  }
+  
+  .footer-opensource-legal-block #opensource-block {
+    flex: 1;
+  }
+  
+  .footer-opensource-legal-block #legal-block {
+    flex: 1;
+  }
+  
+  /* Deuxième rangée - Contact + Actions */
+  .footer-row-2 {
+    display: flex;
+    gap: 1.25rem;
+    width: 100%;
+  }
+  
+  /* Style des boutons CTA - utiliser le système de thème */
+  
+  /* Masquer les actions mobile sur desktop */
+  #actions-mobile-block {
+    display: none !important;
+  }
+  
+  /* Logo en bas */
+  .footer-logo-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* === TABLETTE (768px - 1239px) === */
+@media (max-width: 1239px) and (min-width: 768px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
+  
+  /* Première rangée - Grille 2x2 adaptée */
+  .footer-row-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    width: 100%;
+  }
+  
+  .footer-logo-block {
+    grid-column: 1;
+    grid-row: 1;
+    height: 200px;
+  }
+  
+  .footer-logo-block #logo-block {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-quicklinks-block {
+    grid-column: 2;
+    grid-row: 1;
+    height: 200px;
+  }
+  
+  .footer-opensource-legal-block {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .footer-location-block {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  /* Deuxième rangée - Contact simple sur tablette */
+  .footer-row-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+  
+  /* Style des boutons CTA sur tablette */
+  #actions-block {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Style des boutons CTA sur tablette - utiliser le système de thème */
+  
+  /* Masquer les actions mobile sur tablette */
+  #actions-mobile-block {
+    display: none !important;
+  }
+  
+  .footer-logo-bottom {
+    width: 100%;
+  }
+}
+
+/* === MOBILE (767px-) === */
+@media (max-width: 767px) {
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  /* Première rangée - Structure verticale complète */
+  .footer-row-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+  }
+  
+  .footer-logo-block,
+  .footer-quicklinks-block,
+  .footer-opensource-legal-block,
+  .footer-location-block {
+    width: 100%;
+  }
+  
+  .footer-opensource-legal-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  /* Masquer le bloc contact "Let's spark something together" sur mobile */
+  .footer-row-2 {
+    display: none;
+  }
+  
+  /* Mobile utilise la même structure que les autres blocs */
+  #actions-mobile-block {
+    display: flex !important;
+    width: 100%;
+  }
+  
+
+  
+  .footer-logo-bottom {
+    width: 100%;
+  }
+  
+  /* Ajustements typographiques sur mobile */
+  #dynamic-footer h3 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+  
+  #dynamic-footer .text-base {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  #dynamic-footer .text-sm {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  /* Réduire les gaps et padding sur mobile */
+  .footer-content {
+    gap: 1rem;
+  }
+  
+  #dynamic-footer .rounded-\[20px\] {
+    padding: 1rem;
+  }
+  
+  #dynamic-footer .gap-5 {
+    gap: 1rem;
+  }
+  
+  #dynamic-footer .gap-3 {
+    gap: 0.75rem;
+  }
+}
+
+/* === TRES PETIT MOBILE (480px-) === */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 0.75rem;
+  }
+  
+  #dynamic-footer .rounded-\[20px\] {
+    padding: 0.75rem;
+  }
+  
+  #dynamic-footer h3 {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+  
+  #dynamic-footer .text-base {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+}
+
+/* === ADAPTATIONS FLUIDES === */
+@media (min-width: 1400px) {
+  .footer-container {
+    max-width: 1400px;
+    padding: 0 2.5rem;
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .footer-container {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1240px) {
+  .footer-container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+}
+
+/* === STYLES THÈME DYNAMIQUE === */
+/* Assurer que les blocs peuvent recevoir les couleurs de fond via JavaScript */
+#logo-block,
+#quicklinks-block,
+#opensource-block,
+#legal-block,
+#location-block,
+#contact-block,
+#actions-block,
+#actions-mobile-block {
+  transition: background-color 0.3s ease-in-out;
+  /* Réinitialiser les couleurs par défaut pour permettre l'application JavaScript */
+}
+
+/* Forcer l'application des styles JavaScript avec !important quand nécessaire */
+#logo-block[style*="background-color"],
+#quicklinks-block[style*="background-color"],
+#opensource-block[style*="background-color"],
+#legal-block[style*="background-color"],
+#location-block[style*="background-color"],
+#contact-block[style*="background-color"],
+#actions-block[style*="background-color"],
+#actions-mobile-block[style*="background-color"] {
+  background-color: var(--theme-bg-color) !important;
+}
+
+/* Boutons Book Intro - Style par défaut via Tailwind, transitions seulement */
+#book-intro-button,
+#mobile-book-intro-button {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+  </style>
+</footer> 

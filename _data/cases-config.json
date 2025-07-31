@@ -1,0 +1,35 @@
+{
+  "giros": {
+    "name": "GIROS : Jumeaux numérique du fleuve",
+    "subtitle": "Naviguer vers une gestion durable.",
+    "description": "Découvrez GIROS, conçu pour anticiper les défis du changement climatique et promouvoir une harmonie entre l'économie locale et la préservation de l'environnement.",
+    "contributionsTags": [
+      "Design de produits",
+      "Communication",
+      "Analyse de besoins et fonctionnelle",
+      "Conception et Innovation"
+    ],
+    "context": "Les superstructures portuaires font face à de multiples enjeux : gestion des flux, du foncier, des énergies, et adaptation aux défis du changement climatique\n\nC'est pourquoi le Grand Port Maritime de Bordeaux a initié un appel d'offre sur le développement d'outils numériques autour des multiples usages et enjeux du fleuve.",
+    "solution": "Nous combinons expertise régionale et technologies numériques pour mieux comprendre et innover au sein de l'écosystème. Ceci nous permet de créer un modèle virtuel de la Gironde, simulant son comportement face à différents scénarios.\n\nCe modèle s'attaque aux enjeux du dragage, la pêche, la navigation, et la protection environnementale, visant à équilibrer la conservation de l'environnement avec les activités humaines.",
+    "contributions": "Transformer la complexité en solutions pratiques, combinée à l'adaptation de module open source, s'est révélée cruciale pour répondre aux besoins métier variés. Cette approche a amélioré les fonctionnalités de GIROS et garanti sa durabilité.\n\nL'implémentation rapide des idées a encouragé les échanges entre participants, forgeant les bases de la communauté au sein de la plateforme.",
+    "results": "GIROS 360 transforme la gestion de l'estuaire avec des simulations numériques pour une approche écologique. Cette plateforme élève la sensibilisation au changement climatique et optimise la gestion environnementale et la sécurité de la navigation.\n\nC'est un outil d'aide à la décision pour les gestionnaires de bassins, ayant des retombés dans le monde réel. Récompensée pour l'innovation et contribution à la transition écologique.",
+    "learnings": "",
+    "acknowledgments": "This project, in collaboration with Grand Port Maritime de Bordeaux (GPMB), was made possible thanks to the support of Egis, Fieldbox, Oslandia, Paul Cordonnier, Guillaume Fay, and Jeremy Hornung. We also thank Google, Sud Ouest, and Objectif Aquitaine for amplifying our work, and BIM World | Ville et Territoire for their recognition.",
+    "imagesConfig": "giros",
+    "assetsPath": "./assets/images/cases/giros/"
+  },
+  "autre-cas": {
+    "name": "Autre Cas d'étude",
+    "subtitle": "Sous-titre de l'autre cas",
+    "description": "Description de l'autre cas",
+    "contributionsTags": ["Tag 1", "Tag 2"],
+    "context": "Contexte de l'autre cas",
+    "solution": "Solution de l'autre cas",
+    "contributions": "Contributions de l'autre cas",
+    "results": "Résultats de l'autre cas",
+    "learnings": "",
+    "acknowledgments": "Remerciements de l'autre cas",
+    "imagesConfig": "autre-cas",
+    "assetsPath": "./assets/images/cases/autre-cas/"
+  }
+} 

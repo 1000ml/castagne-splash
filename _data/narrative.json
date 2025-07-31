@@ -1,0 +1,60 @@
+{
+  "blocks": [
+    {
+      "title": "Analyse Intelligente",
+      "content": "Notre IA analyse automatiquement vos documents pour extraire les informations clés, identifier les patterns et générer des insights actionnables. Plus besoin de lecture manuelle fastidieuse.",
+      "icon": "🧠",
+      "features": ["Extraction automatique", "Pattern recognition", "Insights prédictifs"],
+      "cta": {
+        "text": "Essayer l'analyse",
+        "url": "#demo"
+      }
+    },
+    {
+      "title": "Visualisation Avancée",
+      "content": "Transformez vos données narratives en visualisations interactives et intuitives. Graphiques, cartes mentales et dashboards personnalisables pour une compréhension immédiate.",
+      "icon": "📊",
+      "features": ["Graphiques interactifs", "Cartes mentales", "Dashboards temps réel"],
+      "cta": {
+        "text": "Voir les exemples",
+        "url": "#visualizations"
+      }
+    },
+    {
+      "title": "Collaboration en Temps Réel",
+      "content": "Partagez vos analyses avec votre équipe en temps réel. Commentaires, annotations et workflows collaboratifs pour une prise de décision collective.",
+      "icon": "🤝",
+      "features": ["Partage instantané", "Commentaires", "Workflows"],
+      "cta": {
+        "text": "Démarrer la collaboration",
+        "url": "#collaboration"
+      }
+    },
+    {
+      "title": "API Flexible",
+      "content": "Intégrez CASTAGNE dans vos applications existantes grâce à notre API RESTful complète. Développez des solutions sur mesure adaptées à vos besoins.",
+      "icon": "🔌",
+      "features": ["API RESTful", "SDK multi-langages", "Documentation complète"],
+      "cta": {
+        "text": "Explorer l'API",
+        "url": "#api"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Marie Dubois",
+      "role": "Data Scientist",
+      "company": "TechCorp",
+      "content": "CASTAGNE a révolutionné notre façon d'analyser les retours clients. Nous gagnons des heures chaque semaine !",
+      "rating": 5
+    },
+    {
+      "name": "Thomas Martin",
+      "role": "Product Manager",
+      "company": "InnovateLab",
+      "content": "L'interface est intuitive et les insights générés sont pertinents. Un vrai gain de productivité.",
+      "rating": 5
+    }
+  ]
+} 

@@ -1,0 +1,33 @@
+{
+  "title": "CASTAGNE",
+  "description": "Plateforme innovante de gestion de données narratives et d'analyse prédictive",
+  "url": "https://castagne-website.netlify.app",
+  "author": "CASTAGNE Team",
+  "hero": {
+    "title": "CASTAGNE",
+    "subtitle": "Révolutionnez vos données narratives",
+    "description": "Plateforme d'IA avancée pour l'analyse et la gestion de contenu structuré",
+    "cta": {
+      "primary": "Découvrir",
+      "secondary": "Documentation"
+    }
+  },
+  "sections": {
+    "narrative": {
+      "title": "Données Narratives",
+      "subtitle": "Transformez vos contenus en insights actionnables"
+    },
+    "snapshot": {
+      "title": "Snapshot en Temps Réel",
+      "subtitle": "Visualisez vos métriques clés instantanément"
+    },
+    "features": {
+      "title": "Fonctionnalités",
+      "subtitle": "Une suite complète d'outils d'analyse"
+    }
+  },
+  "contact": {
+    "email": "contact@castagne.com",
+    "github": "https://github.com/1000ml/castagne-website"
+  }
+} 

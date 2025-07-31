@@ -1,0 +1,143 @@
+{
+  "giros": {
+    "themeColor": "#AEC8D3",
+    "footer": {
+      "backgroundImage": "/assets/images/cases/giros/CASTAGNE-Giros-FooterField.jpg",
+      "backgroundColor": "#FFFFFF",
+      "textColor": "#000000"
+    },
+    "images": {
+      "CASTAGNE-Giros-Hero.jpg": {
+        "text": "GIROS 360 - Jumeaux numériques du fleuve",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "hero"
+      },
+      "CASTAGNE-Giros-Dragage.jpg": {
+        "text": "Module métier de dragage - Interface de simulation",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "full-width"
+      },
+      "CASTAGNE-Giros-Render.jpg": {
+        "text": "Démonstration en temps réel de la plateforme GIROS 360",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "full-width"
+      },
+      "CASTAGNE-Giros-website.jpg": {
+        "text": "Plateforme web GIROS 360 - Interface principale",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "grid-asymmetric-left"
+      },
+      "CASTAGNE-Giros-Industriel.jpg": {
+        "text": "Infrastructure portuaire et industrielle",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "grid-asymmetric-right"
+      },
+      "CASTAGNE-Giros-nature.jpg": {
+        "text": "Écosystème naturel et environnemental",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "grid-asymmetric-right"
+      },
+      "CASTAGNE-Giros-buoy.jpg": {
+        "text": "Bouée de surveillance - Monitoring en temps réel",
+        "overlay": true,
+        "zoomable": true,
+        "isVideo": false,
+        "type": "grid-equal"
+      },
+      "CASTAGNE-Giros-Dataviz.jpg": {
+        "text": "Visualisation interactive des métriques",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "grid-equal"
+      },
+      "CASTAGNE-Giros-passes.jpg": {
+        "text": "Détail des passes et optimisation de la navigation",
+        "overlay": true,
+        "zoomable": true,
+        "isVideo": false,
+        "type": "full-width"
+      },
+      "CASTAGNE-Giros-research1.jpg": {
+        "text": "Recherche et développement - Laboratoire d'innovation",
+        "overlay": true,
+        "zoomable": true,
+        "isVideo": false,
+        "type": "grid-equal"
+      },
+      "CASTAGNE-Giros-research2.jpg": {
+        "text": "Timeline du projet et roadmap de développement",
+        "overlay": true,
+        "zoomable": false,
+        "isVideo": false,
+        "type": "grid-equal"
+      }
+    },
+    "galleryStructure": [
+      {
+        "type": "hero",
+        "image": "CASTAGNE-Giros-Hero.jpg"
+      },
+      {
+        "type": "full-width",
+        "image": "CASTAGNE-Giros-Dragage.jpg"
+      },
+      {
+        "type": "full-width",
+        "image": "CASTAGNE-Giros-Render.jpg"
+      },
+      {
+        "type": "grid-asymmetric",
+        "left": "CASTAGNE-Giros-website.jpg",
+        "right": ["CASTAGNE-Giros-Industriel.jpg", "CASTAGNE-Giros-nature.jpg"]
+      },
+      {
+        "type": "grid-equal",
+        "items": ["CASTAGNE-Giros-buoy.jpg", "CASTAGNE-Giros-Dataviz.jpg"]
+      },
+      {
+        "type": "full-width",
+        "image": "CASTAGNE-Giros-passes.jpg"
+      },
+      {
+        "type": "grid-equal",
+        "items": ["CASTAGNE-Giros-research1.jpg", "CASTAGNE-Giros-research2.jpg"]
+      }
+    ]
+  },
+  "homepage": {
+    "themeColor": "#1a1c1b",
+    "footer": {
+      "backgroundImage": "#1A1C1B",
+      "backgroundColor": "#E9D8B8",
+      "textColor": "#5B5240"
+    },
+    "images": {
+      "image1.jpg": {
+        "text": "Description de l'image 1",
+        "overlay": true,
+        "zoomable": true,
+        "isVideo": false,
+        "type": "hero"
+      }
+    },
+    "galleryStructure": [
+      {
+        "type": "hero",
+        "image": "image1.jpg"
+      }
+    ]
+  }
+} 

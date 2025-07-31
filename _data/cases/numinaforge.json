@@ -1,0 +1,134 @@
+{
+  "title": "NUMINA : Accélérer l'Intelligence Mathématique Universelle",
+  "subtitle": "IA et l'humain s'unissent pour rendre l'océan infini des mathématiques accessibles et collaboratives.",
+  "description": "Découvrez NUMINA, une plateforme open-source qui facilite l'accès aux mathématiques en traduisant le langage informel en formalisme, accélérant la résolution de problèmes et l'apprentissage collaboratif.",
+  "contributionsTags": [
+    "Design de produits",
+    "Conception et Innovation",
+    "Analyse de besoins et fonctionnelle"
+  ],
+  "context": "Essentielles dans des domaines comme la technologie mobile ou l'énergie, les mathématiques sont souvent perçues comme réservées aux experts. Cette initiative à but non lucratif vise à les rendre accessibles à tous via une plateforme open-source et ouverte à des applications sans limites.\n\nPour concrétiser cette ambition, CASTAGNE intervient en structurant le produit et en développant des processus adaptés à une large communauté.",
+  "solution": "Numina facilite l'accès aux mathématiques en traduisant le langage informel en formalisme, accélérant la résolution de problèmes et l'apprentissage collaboratif. La solution intègre un éditeur intelligent de code et texte ainsi qu'un système de crowdsourcing pour les données mathématiques.\n\nCette plateforme open-source, enrichie par les utilisateurs, améliore continuellement la précision des LLMs et crée une synergie innovante entre IA et humain.",
+  "contributions": "CASTAGNE facilite l'interaction entre le travail humain et l'enrichissement du modèle IA. Par des itérations ciblées, l'équipe surmonte les défis de labellisation et optimise l'interface collaborative pour une expérience utilisateur fluide et intuitive.",
+  "results": "Cette initiative jette les bases pour devenir un véritable Wikipedia des mathématiques, avec pour objectif une base de 5 millions de duos problème/solution. Elle offre un accès élargi aux ressources et établit des standards de performance inédits pour les LLMs.\n\nPremier prix AIMO Progress 2024, soulignant son impact. Plateforme et datasets open-source pour un accès élargi aux mathématiques. Réduction des coûts de labellisation grâce aux annotations collaboratives. Bibliothèque diversifiée pour renforcer les capacités des modèles IA.",
+  "learnings": "",
+  "acknowledgments": {
+    "summary": "This project, in collaboration with the open-source community, was made possible thanks to the support of various contributors and the AIMO Progress 2024 award. We also thank the mathematical community for their ongoing collaboration and feedback.",
+    "details": {
+      "year": "2024",
+      "tags": ["Ed-Tech", "Open Source", "AI", "Mathematics", "Collaborative Learning"],
+      "colors": {
+        "background": "#0C2939",
+        "text": "#A85923"
+      },
+      "footerImage": "./assets/images/cases/numinaforge/footer.jpg",
+      "client": {
+        "name": "Open Source Community",
+        "url": "https://github.com/numinaforge"
+      },
+      "ressources": [
+        {
+          "name": "Site Web",
+          "url": "https://numinaforge.org"
+        },
+        {
+          "name": "Case study",
+          "url": "https://castagne.com/cases/numinaforge"
+        }
+      ],
+      "partenaires": [
+        {
+          "name": "AIMO Progress",
+          "url": "https://aimo-progress.org"
+        },
+        {
+          "name": "Mathematical Community",
+          "url": "https://github.com/numinaforge/contributors"
+        }
+      ],
+      "press": [
+        {
+          "name": "AIMO Progress 2024",
+          "url": "https://aimo-progress.org/awards"
+        }
+      ],
+      "awards": [
+        {
+          "name": "Premier Prix AIMO Progress 2024",
+          "url": "https://aimo-progress.org/awards/2024"
+        }
+      ]
+    }
+  },
+  "themeColor": "#0C2939",
+  "galleryBlocks": [
+    {
+      "type": "hero",
+      "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-hero.jpg",
+      "text": "NUMINA - Accélérer l'Intelligence Mathématique Universelle",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "grid-asymmetric",
+      "left": {
+        "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-rawdata1.jpg",
+        "text": "Données mathématiques brutes - Interface de visualisation",
+        "overlay": true,
+        "zoomable": true
+      },
+      "right": [
+        {
+          "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-rawdata2.jpg",
+          "text": "Analyse et traitement des données mathématiques",
+          "overlay": true,
+          "zoomable": false
+        },
+        {
+          "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-AIAugmentedInterface.jpg",
+          "text": "Interface augmentée par l'IA - Collaboration humain-machine",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-editor.jpg",
+      "text": "Éditeur intelligent de code et texte - Traduction formel/informel",
+      "overlay": true,
+      "zoomable": true
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-login.jpg",
+          "text": "Page de connexion - Interface utilisateur intuitive",
+          "overlay": true,
+          "zoomable": false
+        },
+        {
+          "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-tools.jpg",
+          "text": "Interface augmentée par l'IA - Outils collaboratifs",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-navigation.jpg",
+      "text": "Navigation intuitive et modulaire - Un écran pour tous les rôles",
+      "overlay": true,
+      "zoomable": true
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/numinaforge/CASTAGNE-ProjectNumina-submited.jpg",
+      "text": "Boîte à outils pour accompagner l'utilisateur tout au long du processus",
+      "overlay": true,
+      "zoomable": false
+    }
+  ]
+} 

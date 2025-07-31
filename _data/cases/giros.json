@@ -1,0 +1,176 @@
+{
+  "title": "GIROS : Jumeaux numérique du fleuve",
+  "subtitle": "Naviguer vers une gestion durable.",
+  "description": "Découvrez GIROS, conçu pour anticiper les défis du changement climatique et promouvoir une harmonie entre l'économie locale et la préservation de l'environnement.",
+  "contributionsTags": [
+    "Design de produits",
+    "Communication",
+    "Analyse de besoins et fonctionnelle",
+    "Conception et Innovation"
+  ],
+  "context": "Les superstructures portuaires font face à de multiples enjeux : gestion des flux, du foncier, des énergies, et adaptation aux défis du changement climatique\n\nC'est pourquoi le Grand Port Maritime de Bordeaux a initié un appel d'offre sur le développement d'outils numériques autour des multiples usages et enjeux du fleuve.",
+  "solution": "Nous combinons expertise régionale et technologies numériques pour mieux comprendre et innover au sein de l'écosystème. Ceci nous permet de créer un modèle virtuel de la Gironde, simulant son comportement face à différents scénarios.\n\nCe modèle s'attaque aux enjeux du dragage, la pêche, la navigation, et la protection environnementale, visant à équilibrer la conservation de l'environnement avec les activités humaines.",
+  "contributions": "Transformer la complexité en solutions pratiques, combinée à l'adaptation de module open source, s'est révélée cruciale pour répondre aux besoins métier variés. Cette approche a amélioré les fonctionnalités de GIROS et garanti sa durabilité.\n\nL'implémentation rapide des idées a encouragé les échanges entre participants, forgeant les bases de la communauté au sein de la plateforme.",
+  "results": "GIROS 360 transforme la gestion de l'estuaire avec des simulations numériques pour une approche écologique. Cette plateforme élève la sensibilisation au changement climatique et optimise la gestion environnementale et la sécurité de la navigation.\n\nC'est un outil d'aide à la décision pour les gestionnaires de bassins, ayant des retombés dans le monde réel. Récompensée pour l'innovation et contribution à la transition écologique.",
+  "learnings": "",
+                "acknowledgments": {
+                "summary": "This project, in collaboration with Grand Port Maritime de Bordeaux (GPMB), was made possible thanks to the support of Egis, Fieldbox, Oslandia, Paul Cordonnier, Guillaume Fay, and Jeremy Hornung. We also thank Google, Sud Ouest, and Objectif Aquitaine for amplifying our work, and BIM World | Ville et Territoire for their recognition.",
+                "details": {
+                  "year": "2023",
+                  "tags": ["Sustainability", "Climate Change", "Open Source", "Smart Cities"],
+                  "colors": {
+                    "background": "#AEC8D3",
+                    "text": "#2C5F73"
+                  },
+                  "footerImage": "./assets/images/cases/giros/footer.jpg",
+                  "client": {
+                    "name": "Grand Port Maritime de Bordeaux (GPMB)",
+                    "url": "https://www.bordeaux-port.fr"
+                  },
+                  "ressources": [
+                    {
+                      "name": "Site Web",
+                      "url": "https://giros.bordeaux-port.fr"
+                    },
+                    {
+                      "name": "Case study",
+                      "url": "https://castagne.com/cases/giros"
+                    }
+                  ],
+                  "partenaires": [
+                    {
+                      "name": "Egis",
+                      "url": "https://www.egis-group.com"
+                    },
+                    {
+                      "name": "Fieldbox",
+                      "url": "https://fieldbox.ai"
+                    },
+                    {
+                      "name": "Oslandia",
+                      "url": "https://oslandia.com"
+                    },
+                    {
+                      "name": "Paul Cordonnier",
+                      "url": "https://www.linkedin.com/in/paul-cordonnier"
+                    },
+                    {
+                      "name": "Guillaume Fay",
+                      "url": "https://www.linkedin.com/in/guillaume-fay"
+                    },
+                    {
+                      "name": "Jeremy Hornung",
+                      "url": "https://www.linkedin.com/in/jeremy-hornung"
+                    }
+                  ],
+                  "press": [
+                    {
+                      "name": "Google",
+                      "url": "https://developers.google.com/earth-engine"
+                    },
+                    {
+                      "name": "Sud Ouest",
+                      "url": "https://www.sudouest.fr"
+                    },
+                    {
+                      "name": "Objectif Aquitaine",
+                      "url": "https://objectif-aquitaine.fr"
+                    }
+                  ],
+                  "awards": [
+                    {
+                      "name": "BIM World | Ville et Territoire",
+                      "url": "https://www.bimworld.fr"
+                    }
+                  ]
+                }
+              },
+  "themeColor": "#AEC8D3",
+  "galleryBlocks": [
+    {
+      "type": "hero",
+      "src": "./assets/images/cases/giros/CASTAGNE-Giros-Hero.jpg",
+      "text": "GIROS 360 - Jumeaux numériques du fleuve",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/giros/CASTAGNE-Giros-Dragage.jpg",
+      "text": "Module métier de dragage - Interface de simulation",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/giros/CASTAGNE-Giros-Render.jpg",
+      "text": "Démonstration en temps réel de la plateforme GIROS 360",
+      "overlay": true,
+      "zoomable": false
+    },
+    {
+      "type": "grid-asymmetric",
+      "left": {
+        "src": "./assets/images/cases/giros/CASTAGNE-Giros-website.jpg",
+        "text": "Plateforme web GIROS 360 - Interface principale",
+        "overlay": true,
+        "zoomable": false
+      },
+      "right": [
+        {
+          "src": "./assets/images/cases/giros/CASTAGNE-Giros-Industriel.jpg",
+          "text": "Infrastructure portuaire et industrielle",
+          "overlay": true,
+          "zoomable": false
+        },
+        {
+          "src": "./assets/images/cases/giros/CASTAGNE-Giros-nature.jpg",
+          "text": "Écosystème naturel et environnemental",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "./assets/images/cases/giros/CASTAGNE-Giros-buoy.jpg",
+          "text": "Bouée de surveillance - Monitoring en temps réel",
+          "overlay": true,
+          "zoomable": true
+        },
+        {
+          "src": "./assets/images/cases/giros/CASTAGNE-Giros-Dataviz.jpg",
+          "text": "Visualisation interactive des métriques",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    },
+    {
+      "type": "full-width",
+      "src": "./assets/images/cases/giros/CASTAGNE-Giros-passes.jpg",
+      "text": "Détail des passes et optimisation de la navigation",
+      "overlay": true,
+      "zoomable": true
+    },
+    {
+      "type": "grid-equal",
+      "items": [
+        {
+          "src": "./assets/images/cases/giros/CASTAGNE-Giros-research1.jpg",
+          "text": "Recherche et développement - Laboratoire d'innovation",
+          "overlay": true,
+          "zoomable": true
+        },
+        {
+          "src": "./assets/images/cases/giros/CASTAGNE-Giros-research2.jpg",
+          "text": "Timeline du projet et roadmap de développement",
+          "overlay": true,
+          "zoomable": false
+        }
+      ]
+    }
+  ]
+} 

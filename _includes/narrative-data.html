@@ -1,0 +1,93 @@
+<section id="narrative" class="py-20 bg-gradient-to-b from-neutral-900 to-neutral-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-space font-bold text-[#F5EBD9] mb-6">
+        {{ site.sections.narrative.title }}
+      </h2>
+      <p class="text-xl text-neutral-300 max-w-3xl mx-auto">
+        {{ site.sections.narrative.subtitle }}
+      </p>
+    </div>
+
+    <!-- Narrative Blocks -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+      {% for block in narrative.blocks %}
+      <div class="narrative-block bg-gradient-to-br from-neutral-900/80 to-neutral-800/80 backdrop-blur-sm border border-neutral-700 rounded-2xl p-8 transition-all duration-500 hover:border-[#2D9CDB]/20 hover:scale-105 group">
+        <div class="flex items-start space-x-4 mb-6">
+          <div class="text-3xl group-hover:scale-110 transition-transform duration-300">
+            {{ block.icon }}
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-[#F5EBD9] mb-2 group-hover:text-[#2D9CDB] transition-colors duration-300">
+              {{ block.title }}
+            </h3>
+            <p class="text-neutral-300 leading-relaxed mb-4">
+              {{ block.content }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Features list -->
+        {% if block.features %}
+        <div class="mb-6">
+          <div class="flex flex-wrap gap-2">
+            {% for feature in block.features %}
+            <span class="px-3 py-1 bg-[#2D9CDB]/10 text-[#2D9CDB] text-sm rounded-full border border-[#2D9CDB]/20">
+              {{ feature }}
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- CTA Button -->
+        {% if block.cta %}
+        <a href="{{ block.cta.url }}" 
+           class="inline-flex items-center px-6 py-3 bg-[#2D9CDB] text-white font-semibold rounded-lg transition-all duration-300 hover:bg-[#2D9CDB]/80 hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#2D9CDB]/25">
+          {{ block.cta.text }}
+          <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Testimonials -->
+    <div class="mt-20">
+      <h3 class="text-2xl font-bold text-[#F5EBD9] text-center mb-12">Ce que disent nos utilisateurs</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for testimonial in narrative.testimonials %}
+        <div class="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-6 transition-all duration-300 hover:border-[#2D9CDB]/30 hover:scale-105">
+          <div class="flex items-center mb-4">
+            <div class="flex text-[#2D9CDB]">
+              {% for i in (1..testimonial.rating) %}
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <blockquote class="text-neutral-300 italic mb-4">
+            "{{ testimonial.content }}"
+          </blockquote>
+          
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-gradient-to-br from-[#2D9CDB] to-[#2D9CDB]/70 rounded-full flex items-center justify-center text-white font-bold">
+              {{ testimonial.name | slice(0, 1) }}
+            </div>
+            <div class="ml-3">
+              <div class="text-[#F5EBD9] font-semibold">{{ testimonial.name }}</div>
+              <div class="text-sm text-neutral-400">{{ testimonial.role }} chez {{ testimonial.company }}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section> 

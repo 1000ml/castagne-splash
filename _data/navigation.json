@@ -1,0 +1,64 @@
+{
+  "main": [
+    {
+      "label": "Accueil",
+      "url": "/",
+      "icon": "🏠"
+    },
+    {
+      "label": "Fonctionnalités",
+      "url": "#features",
+      "icon": "⚡"
+    },
+    {
+      "label": "Défis",
+      "url": "#challenges",
+      "icon": "🎯"
+    },
+    {
+      "label": "Documentation",
+      "url": "#docs",
+      "icon": "📚"
+    },
+    {
+      "label": "Contact",
+      "url": "#contact",
+      "icon": "📧"
+    }
+  ],
+  "footer": [
+    {
+      "label": "À propos",
+      "url": "#about"
+    },
+    {
+      "label": "Politique de confidentialité",
+      "url": "#privacy"
+    },
+    {
+      "label": "Conditions d'utilisation",
+      "url": "#terms"
+    },
+    {
+      "label": "Support",
+      "url": "#support"
+    }
+  ],
+  "social": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/1000ml/castagne-website",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "#linkedin",
+      "icon": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "url": "#twitter",
+      "icon": "twitter"
+    }
+  ]
+} 

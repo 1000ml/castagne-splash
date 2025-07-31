@@ -1,0 +1,53 @@
+[build]
+  publish = "_site"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Redirection pour les case studies - SPA routing
+[[redirects]]
+  from = "/case-study.html"
+  to = "/case-study.html"
+  status = 200
+
+# Redirection pour les assets JSON
+[[redirects]]
+  from = "/_data/*"
+  to = "/_data/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Netlify CMS Identity
+[context.production.environment]
+  NETLIFY_CMS_LOCAL_BACKEND = "false"
+
+[context.deploy-preview.environment]
+  NETLIFY_CMS_LOCAL_BACKEND = "true" 

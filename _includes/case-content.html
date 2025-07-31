@@ -1,0 +1,393 @@
+<!-- Composant Content - Contenu structuré des case studies -->
+<div class="case-content" data-case-id="default">
+  <!-- Navigation des cases -->
+  <div class="case-navigation flex gap-2 mb-8">
+    <button class="nav-btn bg-[#e0efed] p-2.5 rounded-lg hover:bg-[#d0e5e3] transition-colors">
+      <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/>
+      </svg>
+    </button>
+    <button class="nav-btn bg-[#e0efed] p-2.5 rounded-bl-lg rounded-br-[100px] rounded-tl-lg rounded-tr-[100px] hover:bg-[#d0e5e3] transition-colors">
+      <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="content-main">
+    <!-- En-tête du case -->
+    <div class="case-header mb-8">
+      <h1 class="text-2xl font-semibold text-black leading-8 tracking-[-0.144px] mb-4" id="case-title">
+        Titre du projet
+      </h1>
+      <div class="case-subtitle">
+        <p class="text-xl leading-7">
+          <span class="font-semibold tracking-[-0.1px]" id="case-subtitle">Sous-titre</span>
+          <span class="font-normal text-[#82848f]" id="case-description">Description du projet</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Tags de contributions -->
+    <div class="contributions-tags mb-8">
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="text-sm text-black leading-6">Contributions :</span>
+        <div id="contributions-tags-container">
+          <!-- Les tags seront générés dynamiquement -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Séparateur -->
+    <div class="separator mb-8">
+      <svg width="100%" height="26" viewBox="0 0 877 26" fill="none">
+        <path d="M0 13h877" stroke="#E5E7EB" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Section Introduction -->
+    <div class="content-section mb-8">
+      <div class="text-base leading-6 text-black">
+        <p class="mb-4" id="case-context">Contexte du projet</p>
+      </div>
+    </div>
+
+    <!-- Section Solution -->
+    <div class="content-section mb-8">
+      <h2 class="text-lg font-semibold text-black leading-7 mb-4">
+        Solution proposée : Convergence Écologique et Économique
+      </h2>
+      <div class="text-base font-medium leading-6 text-black">
+        <p class="mb-4" id="case-solution">Description de la solution</p>
+      </div>
+    </div>
+
+    <!-- Section Contributions -->
+    <div class="content-section mb-8 bg-white rounded-lg p-4">
+      <h2 class="text-lg font-semibold text-black leading-7 mb-4">
+        Contributions : Une Impulsion Créative
+      </h2>
+      <div class="text-base font-medium leading-6 text-black">
+        <p class="mb-4" id="case-contributions">Description des contributions</p>
+      </div>
+    </div>
+
+    <!-- Section Résultats -->
+    <div class="content-section mb-8">
+      <h2 class="text-lg font-semibold text-black leading-7 mb-4">
+        Résultats & Impact : Naviguer vers un Avenir Durable
+      </h2>
+      <div class="text-base font-medium leading-6 text-black">
+        <p class="mb-4" id="case-results">Description des résultats</p>
+      </div>
+    </div>
+
+    <!-- Section Acknowledgments -->
+    <div class="acknowledgments bg-white rounded-[20px] p-4" id="acknowledgments-section" style="display: none;">
+      <h3 class="text-lg font-semibold text-black leading-7 mb-4">Acknowledgments</h3>
+      <div class="text-sm font-medium leading-6 text-neutral-800">
+        <p id="acknowledgments-summary">Remerciements</p>
+        
+        <div class="mt-4" id="acknowledgments-details">
+          <!-- Les détails seront générés dynamiquement -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+class CaseContent {
+  constructor(container, options = {}) {
+    this.container = container;
+    this.caseData = options.caseData || {};
+    
+    this.init();
+  }
+
+  init() {
+    this.render();
+  }
+
+  render() {
+    console.log('CaseContent: Rendering with data', this.caseData);
+    
+    // Mettre à jour le titre
+    const titleElement = this.container.querySelector('#case-title');
+    if (titleElement && this.caseData.title) {
+      titleElement.textContent = this.caseData.title;
+    }
+
+    // Mettre à jour le sous-titre
+    const subtitleElement = this.container.querySelector('#case-subtitle');
+    if (subtitleElement && this.caseData.subtitle) {
+      subtitleElement.textContent = this.caseData.subtitle;
+    }
+
+    // Mettre à jour la description
+    const descriptionElement = this.container.querySelector('#case-description');
+    if (descriptionElement && this.caseData.description) {
+      descriptionElement.textContent = this.caseData.description;
+    }
+
+    // Mettre à jour les tags de contributions
+    this.renderContributionsTags();
+
+    // Mettre à jour le contexte
+    const contextElement = this.container.querySelector('#case-context');
+    if (contextElement && this.caseData.context) {
+      contextElement.textContent = this.caseData.context;
+    }
+
+    // Mettre à jour la solution
+    const solutionElement = this.container.querySelector('#case-solution');
+    if (solutionElement && this.caseData.solution) {
+      solutionElement.textContent = this.caseData.solution;
+    }
+
+    // Mettre à jour les contributions
+    const contributionsElement = this.container.querySelector('#case-contributions');
+    if (contributionsElement && this.caseData.contributions) {
+      contributionsElement.textContent = this.caseData.contributions;
+    }
+
+    // Mettre à jour les résultats
+    const resultsElement = this.container.querySelector('#case-results');
+    if (resultsElement && this.caseData.results) {
+      resultsElement.textContent = this.caseData.results;
+    }
+
+    // Mettre à jour les acknowledgments
+    this.renderAcknowledgments();
+  }
+
+  renderContributionsTags() {
+    const container = this.container.querySelector('#contributions-tags-container');
+    if (!container || !this.caseData.contributionsTags) return;
+
+    const tagsHtml = this.caseData.contributionsTags.map(tag => 
+      `<span class="bg-[rgba(224,239,237,0.5)] px-3 py-1 rounded-lg text-sm font-medium text-black leading-5">${tag}</span>`
+    ).join('');
+
+    container.innerHTML = tagsHtml;
+  }
+
+  renderAcknowledgments() {
+    if (!this.caseData.acknowledgments) {
+      const section = this.container.querySelector('#acknowledgments-section');
+      if (section) {
+        section.style.display = 'none';
+      }
+      return;
+    }
+
+    const section = this.container.querySelector('#acknowledgments-section');
+    if (section) {
+      section.style.display = 'block';
+    }
+
+    // Mettre à jour le résumé
+    const summaryElement = this.container.querySelector('#acknowledgments-summary');
+    if (summaryElement && this.caseData.acknowledgments.summary) {
+      summaryElement.textContent = this.caseData.acknowledgments.summary;
+    }
+
+    // Mettre à jour les détails
+    this.renderAcknowledgmentsDetails();
+  }
+
+  renderAcknowledgmentsDetails() {
+    const container = this.container.querySelector('#acknowledgments-details');
+    if (!container || !this.caseData.acknowledgments.details) return;
+
+    const details = this.caseData.acknowledgments.details;
+    let detailsHtml = '';
+
+    // Client
+    if (details.client) {
+      detailsHtml += `
+        <div class="mb-2">
+          <strong>Client :</strong> 
+          <a href="${details.client.url}" target="_blank" class="text-blue-600 hover:text-blue-800 underline">${details.client.name}</a>
+        </div>
+      `;
+    }
+
+    // Ressources
+    if (details.ressources && details.ressources.length > 0) {
+      detailsHtml += `
+        <div class="mb-2">
+          <strong>Ressources :</strong>
+          <ul class="list-disc list-inside ml-2">
+            ${details.ressources.map(resource => 
+              `<li><a href="${resource.url}" target="_blank" class="text-blue-600 hover:text-blue-800 underline">${resource.name}</a></li>`
+            ).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    // Partenaires
+    if (details.partenaires && details.partenaires.length > 0) {
+      detailsHtml += `
+        <div class="mb-2">
+          <strong>Partenaires :</strong>
+          <ul class="list-disc list-inside ml-2">
+            ${details.partenaires.map(partner => 
+              `<li><a href="${partner.url}" target="_blank" class="text-blue-600 hover:text-blue-800 underline">${partner.name}</a></li>`
+            ).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    // Presse
+    if (details.press && details.press.length > 0) {
+      detailsHtml += `
+        <div class="mb-2">
+          <strong>Presse :</strong>
+          <ul class="list-disc list-inside ml-2">
+            ${details.press.map(press => 
+              `<li><a href="${press.url}" target="_blank" class="text-blue-600 hover:text-blue-800 underline">${press.name}</a></li>`
+            ).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    // Awards
+    if (details.awards && details.awards.length > 0) {
+      detailsHtml += `
+        <div class="mb-2">
+          <strong>Awards :</strong>
+          <ul class="list-disc list-inside ml-2">
+            ${details.awards.map(award => 
+              `<li><a href="${award.url}" target="_blank" class="text-blue-600 hover:text-blue-800 underline">${award.name}</a></li>`
+            ).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    container.innerHTML = detailsHtml;
+  }
+}
+
+// Initialisation automatique quand les données sont disponibles
+document.addEventListener('galleryDataLoaded', function(event) {
+  const caseData = event.detail.caseData;
+  const content = document.querySelector('.case-content');
+  
+  if (content && caseData) {
+    console.log('CaseContent: Initializing with data');
+    
+    // Détruire l'instance précédente si elle existe
+    if (window.currentContentInstance) {
+      window.currentContentInstance = null;
+    }
+    
+    // Créer une nouvelle instance
+    window.currentContentInstance = new CaseContent(content, {
+      caseData: caseData
+    });
+  }
+});
+
+// Initialisation par défaut si aucune donnée n'est disponible
+document.addEventListener('DOMContentLoaded', function() {
+  const content = document.querySelector('.case-content');
+  if (content && !window.currentContentInstance) {
+    console.log('CaseContent: Initializing with empty data');
+    window.currentContentInstance = new CaseContent(content, {
+      caseData: {}
+    });
+  }
+});
+</script>
+
+<style>
+.case-content {
+  width: 100%;
+  max-width: 457px;
+  padding: 0 13px;
+}
+
+.case-navigation {
+  margin-bottom: 32px;
+}
+
+.nav-btn {
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+}
+
+.case-header {
+  margin-bottom: 32px;
+}
+
+.case-header h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.144px;
+}
+
+.case-subtitle p {
+  font-family: 'Inter', sans-serif;
+  line-height: 28px;
+}
+
+.contributions-tags {
+  margin-bottom: 32px;
+}
+
+.content-section {
+  margin-bottom: 32px;
+}
+
+.content-section h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.content-section p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.separator {
+  margin-bottom: 32px;
+}
+
+.acknowledgments {
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.acknowledgments h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.acknowledgments p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  color: #52525b;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .case-content {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+</style> 

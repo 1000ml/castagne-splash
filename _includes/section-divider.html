@@ -1,0 +1,22 @@
+<div class="section-divider relative py-16 overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900"></div>
+  
+  <!-- Animated elements -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-full max-w-4xl mx-auto px-4">
+      <div class="flex items-center space-x-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[#2D9CDB]/50 to-transparent"></div>
+        <div class="w-3 h-3 bg-[#2D9CDB] rounded-full animate-pulse"></div>
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[#2D9CDB]/50 to-transparent"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Optional content -->
+  {% if content %}
+  <div class="relative z-10 text-center">
+    {{ content | safe }}
+  </div>
+  {% endif %}
+</div> 

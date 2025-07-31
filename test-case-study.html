@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Case Study - CASTAGNE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">Test du système Case Study</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Test GIROS -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-xl font-semibold mb-4">Test GIROS</h2>
+        <p class="mb-4">Test du case study GIROS avec les données JSON.</p>
+        <a href="/case-study.html?case=giros" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          Voir GIROS
+        </a>
+      </div>
+      
+      <!-- Test Plaiad -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-xl font-semibold mb-4">Test Plaiad</h2>
+        <p class="mb-4">Test du case study Plaiad avec les données JSON.</p>
+        <a href="/case-study.html?case=plaiad" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+          Voir Plaiad
+        </a>
+      </div>
+      
+      <!-- Test Case inexistant -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-xl font-semibold mb-4">Test Case inexistant</h2>
+        <p class="mb-4">Test avec un case study qui n'existe pas.</p>
+        <a href="/case-study.html?case=inexistant" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+          Test erreur
+        </a>
+      </div>
+      
+      <!-- Test sans paramètre -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-xl font-semibold mb-4">Test sans paramètre</h2>
+        <p class="mb-4">Test sans spécifier de case study.</p>
+        <a href="/case-study.html" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+          Test sans paramètre
+        </a>
+      </div>
+    </div>
+    
+    <div class="mt-8 bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">Statut des données JSON</h2>
+      <div id="json-status" class="space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 bg-gray-300 rounded-full"></span>
+          <span>Vérification en cours...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Test de la disponibilité des données JSON
+    async function testJsonAvailability() {
+      const cases = ['giros', 'plaiad'];
+      const statusContainer = document.getElementById('json-status');
+      
+      for (const caseId of cases) {
+        try {
+          const response = await fetch(`/_data/cases/${caseId}.json`);
+          const isAvailable = response.ok;
+          
+          const statusElement = document.createElement('div');
+          statusElement.className = 'flex items-center gap-2';
+          statusElement.innerHTML = `
+            <span class="w-4 h-4 rounded-full ${isAvailable ? 'bg-green-500' : 'bg-red-500'}"></span>
+            <span>${caseId}.json: ${isAvailable ? 'Disponible' : 'Non disponible'}</span>
+          `;
+          
+          statusContainer.appendChild(statusElement);
+        } catch (error) {
+          const statusElement = document.createElement('div');
+          statusElement.className = 'flex items-center gap-2';
+          statusElement.innerHTML = `
+            <span class="w-4 h-4 rounded-full bg-red-500"></span>
+            <span>${caseId}.json: Erreur de chargement</span>
+          `;
+          
+          statusContainer.appendChild(statusElement);
+        }
+      }
+    }
+    
+    // Exécuter les tests au chargement de la page
+    document.addEventListener('DOMContentLoaded', testJsonAvailability);
+  </script>
+</body>
+</html> 
