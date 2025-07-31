@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Redirection pour que splash.html soit la page d'accueil
+[[redirects]]
+  from = "/"
+  to = "/splash/"
+  status = 200
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
